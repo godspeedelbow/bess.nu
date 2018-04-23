@@ -21,7 +21,7 @@ const NavBarContent = styled.div`
 const MenuItem = styled.a`
   cursor: pointer;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 15px;
   color: #777;
 `;
 
