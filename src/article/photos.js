@@ -3,10 +3,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import SubTitle from "./sub-title";
-
-const Photo = styled.img`
-  width: 100%;
-`;
+import Photo from '../shared/photo';
 
 const Title = styled.h4`
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;

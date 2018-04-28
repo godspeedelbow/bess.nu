@@ -2,6 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 const NavBar = styled.div`
   margin: 0;
   padding-bottom: 10px;
@@ -18,11 +20,21 @@ const NavBarContent = styled.div`
   margin: 0 auto;
 `;
 
-const MenuItem = styled.a`
+const MenuItem = styled(Link)`
   cursor: pointer;
   display: inline-block;
-  padding: 10px 15px;
+  padding: 10px;
+  @media(min-width: 400px) {
+    padding: 10px 15px;
+  }
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
   color: #777;
+  text-decoration: none;
 `;
 
 const Title = styled(MenuItem)`
@@ -33,10 +45,12 @@ const Title = styled(MenuItem)`
 const Header = () => (
   <NavBar>
     <NavBarContent>
-      <Title>bess.nu</Title>
-      <MenuItem>archief</MenuItem>
-      <MenuItem>schip</MenuItem>
-      <MenuItem>bemanning</MenuItem>
+      {/* insert logo bess here */}
+      <MenuItem to="/">home</MenuItem>
+      <MenuItem to="/archief">archief</MenuItem>
+      <MenuItem to="/crew">crew</MenuItem>
+      <MenuItem to="/route">route</MenuItem>
+      <MenuItem to="/bess">bess</MenuItem>
     </NavBarContent>
   </NavBar>
 );

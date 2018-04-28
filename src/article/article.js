@@ -5,10 +5,17 @@ import Meta from "./meta";
 import Paragraph from "./paragraph";
 import Photos from "./photos";
 
-export default article;
+import { Link } from "react-router-dom";
 
-function article({ article }) {
+import styled from 'styled-components';
+
+import TransparentLink from '../shared/transparent-link';
+
+export default Article;
+
+function Article({ article }) {
   const {
+    id,
     title = "Geen titel",
     author,
     created,
@@ -19,7 +26,7 @@ function article({ article }) {
   } = article;
   return (
     <Fragment>
-      <Title>{title}</Title>
+      <TransparentLink to={`/archief/${id}`}><Title>{title}</Title></TransparentLink>
       <Meta
         created={created}
         author={author}
