@@ -11,8 +11,11 @@ import TransparentLink from './shared/transparent-link';
 
 import { articles } from "./data";
 
+const PreviewTitle = styled(SubTitle)`
+  margin-top: 0
+`;
+
 const PreviewParagraph = styled(Paragraph)`
-  font-size: 1.2em;
 `;
 
 const Archive = () => {
@@ -35,7 +38,7 @@ const Archive = () => {
         return (
           <Fragment>
             <TransparentLink to={`/archief/${id}`}>
-              <SubTitle>{title}</SubTitle>
+              <PreviewTitle>{title}</PreviewTitle>
             </TransparentLink>
             <Meta
               created={created}

@@ -9,11 +9,18 @@ const Title = styled.h1`
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0;
-  font-size: 42px;
   margin-left: -2.63px;
   margin-bottom: 12px;
   line-height: 1.04;
   letter-spacing: -0.015em;
+
+  font-size: 25px;
+  @media(min-width: 375px) {
+    font-size: 30px;
+  }
+  @media(min-width: 800px) {
+    font-size: 42px;
+  }
 `;
 
 export default Title;

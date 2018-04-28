@@ -10,10 +10,17 @@ const SubTitle = styled.h1`
   color: #555;
   font-style: normal;
   letter-spacing: 0;
-  font-size: 32px;
   margin-left: -2.63px;
   margin-top: 40px;
   letter-spacing: -0.015em;
+
+  font-size: 22px;
+  @media(min-width: 375px) {
+    font-size: 26px;
+  }
+  @media(min-width: 800px) {
+    font-size: 32px;
+  }
 `;
 
 export default SubTitle;
