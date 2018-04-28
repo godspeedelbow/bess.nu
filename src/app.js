@@ -8,7 +8,7 @@ import Bess from "./bess";
 import RoutePage from "./route";
 import Archive from "./archive";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 import styled from "styled-components";
 
