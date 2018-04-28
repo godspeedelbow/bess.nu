@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 
-import Title from "./article/title";
-import SubTitle from "./article/sub-title";
-import Paragraph from "./article/paragraph";
-import Photo from "./shared/photo";
-import Grid from "./shared/grid";
+import Title from "../shared/title";
+import SubTitle from "../shared/sub-title";
+import Paragraph from "../shared/paragraph";
+import Photo from "../shared/photo";
+import Grid from "../shared/grid";
 
-import photo1 from './assets/photos/IJmuiden 26062011-13-800px.jpg';
-import photo2 from './assets/photos/IJmuiden 26062011-14-800px.jpg';
+import photo1 from '../assets/photos/IJmuiden 26062011-13-800px.jpg';
+import photo2 from '../assets/photos/IJmuiden 26062011-14-800px.jpg';
 
 export default Crew;
 

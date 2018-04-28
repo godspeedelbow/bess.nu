@@ -3,10 +3,10 @@ import React, { Fragment } from "react";
 import Header from "./header";
 import Footer from "./footer";
 import Article from "./article";
-import Crew from "./crew";
-import Bess from "./bess";
-import RoutePage from "./route";
-import Archive from "./archive";
+import Crew from "./pages/crew";
+import Bess from "./pages/bess";
+import RoutePage from "./pages/route";
+import Archive from "./pages/archive";
 
 import { HashRouter as Router, Route } from "react-router-dom";
 

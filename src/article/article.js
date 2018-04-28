@@ -1,14 +1,10 @@
 import React, { Fragment } from "react";
 
-import Title from "./title";
 import Meta from "./meta";
-import Paragraph from "./paragraph";
 import Photos from "./photos";
 
-import { Link } from "react-router-dom";
-
-import styled from 'styled-components';
-
+import Title from "../shared/title";
+import Paragraph from "../shared/paragraph";
 import TransparentLink from '../shared/transparent-link';
 
 export default Article;

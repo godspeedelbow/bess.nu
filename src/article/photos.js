@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
-
 import styled from "styled-components";
 
-import SubTitle from "./sub-title";
-import Paragraph from "./paragraph";
+import SubTitle from "../shared/sub-title";
+import Paragraph from "../shared/paragraph";
 import Photo from '../shared/photo';
 
 const Title = styled(Paragraph)`

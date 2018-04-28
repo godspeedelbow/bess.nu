@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 
-import Title from "./article/title";
-import SubTitle from "./article/sub-title";
-import Paragraph from "./article/paragraph";
-import Photo from "./shared/photo";
+import Title from "../shared/title";
+import SubTitle from "../shared/sub-title";
+import Paragraph from "../shared/paragraph";
+import Photo from "../shared/photo";
 
-import photo1 from './assets/photos/DSC04756-800px.jpg';
-import photo2 from './assets/photos/IMG_1407-800px.jpg';
+import photo1 from '../assets/photos/DSC04756-800px.jpg';
+import photo2 from '../assets/photos/IMG_1407-800px.jpg';
 
 export default Crew;
 

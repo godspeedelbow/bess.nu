@@ -3,13 +3,13 @@ import React, { Fragment } from "react";
 
 import styled from "styled-components";
 
-import Title from "./article/title";
-import SubTitle from "./article/sub-title";
-import Meta from "./article/meta";
-import Paragraph from "./article/paragraph";
-import TransparentLink from './shared/transparent-link';
+import Title from "../shared/title";
+import SubTitle from "../shared/sub-title";
+import Meta from "../article/meta";
+import Paragraph from "../shared/paragraph";
+import TransparentLink from '../shared/transparent-link';
 
-import { articles } from "./data";
+import { articles } from "../data";
 
 const PreviewTitle = styled(SubTitle)`
   margin-top: 0

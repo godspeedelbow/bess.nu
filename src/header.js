@@ -37,11 +37,6 @@ const MenuItem = styled(Link)`
   text-decoration: none;
 `;
 
-const Title = styled(MenuItem)`
-  font-weight: 500;
-  padding-left: 0;
-`;
-
 const Header = () => (
   <NavBar>
     <NavBarContent>

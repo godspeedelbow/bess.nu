@@ -1,9 +1,7 @@
-import React, { Fragment } from "react";
-
+import React from "react";
 import styled from "styled-components";
 
-import SubTitle from "./sub-title";
-import Paragraph from "./paragraph";
+import Paragraph from "../shared/paragraph";
 
 const Meta = styled(Paragraph)`
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva,
@@ -21,7 +19,7 @@ const Meta = styled(Paragraph)`
 `;
 
 const MetaContainer = props => {
-  const { created, author = "Lex", location, gelocation } = props;
+  const { created, author = "Lex", location, geolocation } = props;
   return (
     <Meta>
       <strong>datum</strong> {created}
