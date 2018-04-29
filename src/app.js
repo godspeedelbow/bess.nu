@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 
 import Header from "./header";
-import Footer from "./footer";
 import Article from "./article";
 import Crew from "./pages/crew";
 import Bess from "./pages/bess";
@@ -45,7 +44,6 @@ const App = () => {
               : null;
           }}/>
         </Content>
-        <Footer />
       </Fragment>
     </Router>
   );
