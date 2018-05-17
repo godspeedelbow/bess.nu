@@ -5,7 +5,6 @@ import photo3 from "../photos/1001-12-mei-sluis-800px.jpg";
 export default {
   id: "1001",
   title: "Aan- en afmeren",
-  author: "Lex",
   created: "12 mei 2018",
   location: "Oranjesluizen in Amsterdam",
   geolocation: {

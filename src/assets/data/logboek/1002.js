@@ -1,7 +1,6 @@
 export default {
   id: "1002",
   title: "Koppie erbij houden",
-  author: "Lex",
   created: "14 mei 2018",
   location: "Seaport IJmuiden",
   geolocation: {

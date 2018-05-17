@@ -1,7 +1,6 @@
 export default {
-  id: '281',
+  id: "281",
   title: "Het rondje is gerond",
-  author: "Lex",
   created: "26 juni 2011",
   location: "Seaport Marina IJmuiden",
   geolocation: {
@@ -57,11 +56,12 @@ export default {
     {
       title:
         "Voortaan kunnen we een veiligheidshelm opzetten in plaats van Hema-pannen",
-      src: "http://www.boezeman.com/bess/sites/default/files/P6260225%281%29.JPG"
+      src:
+        "http://www.boezeman.com/bess/sites/default/files/P6260225%281%29.JPG"
     },
     {
       title: "Een prachtige zondag met zeemist als apotheose",
       src: "http://www.boezeman.com/bess/sites/default/files/P6260013.jpg"
     }
-  ],
+  ]
 };

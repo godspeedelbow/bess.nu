@@ -19,14 +19,12 @@ const Meta = styled(Paragraph)`
 `;
 
 const MetaContainer = props => {
-  const { created, author = "Lex", location, geolocation } = props;
+  const { created, location, geolocation } = props;
   return (
     <Meta>
       <strong>datum</strong> {created}
       {" / "}
       <strong>locatie</strong> {location}
-      {" / "}
-      <strong>tekst</strong> {author}
     </Meta>
   );
 };

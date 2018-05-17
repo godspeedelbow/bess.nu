@@ -3,7 +3,6 @@ import photo1 from "../photos/1000-ineke-in-mast-original-800px.jpg";
 export default {
   id: "1000",
   title: "Tijd om te gaan",
-  author: "Lex",
   created: "8 mei 2018",
   location: "Enkhuizen",
   geolocation: {
