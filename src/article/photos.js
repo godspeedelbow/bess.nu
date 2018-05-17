@@ -3,17 +3,16 @@ import styled from "styled-components";
 
 import SubTitle from "../shared/sub-title";
 import Paragraph from "../shared/paragraph";
-import Photo from '../shared/photo';
+import Photo from "../shared/photo";
 
 const Title = styled(Paragraph)`
-  font-size: 1.0em;
+  font-size: 1em;
   margin-top: 0;
   padding-bottom: 25px;
 `;
 
 const Photos = ({ photos }) => (
   <Fragment>
-    {!!photos.length && <SubTitle>De gevoelige plaat</SubTitle>}
     {photos.map(photo => (
       <Fragment>
         <Photo src={photo.src} alt={photo.title} title={photo.title} />
