@@ -7,7 +7,7 @@ import Bess from "./pages/bess";
 import RoutePage from "./pages/route";
 import Archive from "./pages/archive";
 
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -28,21 +28,27 @@ const App = () => {
       <Fragment>
         <Header />
         <Content>
-          <Route exact path="/" render={()=>{
-            return <Article article={latestArticle} />;
-          }} />
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return <Article article={latestArticle} />;
+            }}
+          />
           <Route exact path="/crew" component={Crew} />
           <Route exact path="/bess" component={Bess} />
           <Route exact path="/route" component={RoutePage} />
           <Route exact path="/archief" component={Archive} />
-          <Route exact path="/archief/:id" render={(props) => {
-            const articleId = props.match.params.id;
-            const article = articles.find(({ id }) => id === articleId);
+          <Route
+            exact
+            path="/archief/:id"
+            render={props => {
+              const articleId = props.match.params.id;
+              const article = articles.find(({ id }) => id === articleId);
 
-            return article
-              ? <Article article={article} />
-              : null;
-          }}/>
+              return article ? <Article article={article} /> : null;
+            }}
+          />
         </Content>
       </Fragment>
     </Router>
