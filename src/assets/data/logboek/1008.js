@@ -31,7 +31,6 @@ export default {
   photos: [
     {
       src: photo1,
-      title: 'Twee uur later trekt de mist op en varen we op ons dooie akkertje naar Fowey.'
     },
     {
       src: photo2,
