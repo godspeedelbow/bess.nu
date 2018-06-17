@@ -9,8 +9,12 @@ import article1006 from "./assets/data/logboek/1006";
 import article1007 from "./assets/data/logboek/1007";
 import article1008 from "./assets/data/logboek/1008";
 import article1009 from "./assets/data/logboek/1009";
+import article1010 from "./assets/data/logboek/1010";
+import article1011 from "./assets/data/logboek/1011";
 
 const articles = [
+  article1011,
+  article1010,
   article1009,
   article1008,
   article1007,
