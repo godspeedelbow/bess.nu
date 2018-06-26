@@ -11,8 +11,10 @@ import article1008 from "./assets/data/logboek/1008";
 import article1009 from "./assets/data/logboek/1009";
 import article1010 from "./assets/data/logboek/1010";
 import article1011 from "./assets/data/logboek/1011";
+import article1012 from "./assets/data/logboek/1012";
 
 const articles = [
+  article1012,
   article1011,
   article1010,
   article1009,
