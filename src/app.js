@@ -7,7 +7,7 @@ import Bess from "./pages/bess";
 import RoutePage from "./pages/route";
 import Archive from "./pages/archive";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 import styled from "styled-components";
 
