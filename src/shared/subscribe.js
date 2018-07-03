@@ -97,7 +97,7 @@ const Subscribe = ({ onSubmit, onChange, localError, data, loading, error }) => 
     <Panel>
       <SubTitle>Wil je een seintje als we een nieuw bericht plaatsen?</SubTitle>
       <form onSubmit={onSubmit}>
-        <Email disabled={disabled} type="text" name="email" placeholder="je emailadres" onChange={onChange} />
+        <Email disabled={disabled} type="email" name="email" placeholder="je emailadres" onChange={onChange} />
         <SubscribeButton disabled={disabled} type="submit">Hou me op de hoogte</SubscribeButton>
       </form>
       <Error>{error || localError}</Error>
