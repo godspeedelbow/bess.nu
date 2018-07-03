@@ -69,8 +69,8 @@ const Unsubscribe = ({ email }) => {
 };
 
 const UnsubscribeContainer = withProps(
-  () => {
-    const params = new URLSearchParams(window.location.search);
+  (props) => {
+    const params = new URLSearchParams(props.location.search);
     const email = params.get('email');
 
     return {
