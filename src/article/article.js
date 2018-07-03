@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 
+import Subscribe from "../shared/subscribe";
+
 import Meta from "./meta";
 import Photos from "./photos";
 
@@ -29,6 +31,7 @@ function Article({ article }) {
       {paragraphs.map(p => <Paragraph>{p}</Paragraph>)}
 
       <Photos photos={photos} />
+      <Subscribe />
     </Fragment>
   );
 }
