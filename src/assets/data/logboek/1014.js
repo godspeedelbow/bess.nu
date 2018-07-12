@@ -1,5 +1,5 @@
-import photo1 from "../photos/1014-30-juni-2018-berplaatsen-van-galicia-800px.jpg";
-import photo2 from "../photos/1014-30-juni-2018-berplaatsen-van-galicia-2-800px.jpg";
+import photo1 from "../photos/1014-8-juli-2018-berplaatsen-van-galicia-800px.jpg";
+import photo2 from "../photos/1014-8-juli-2018-berplaatsen-van-galicia-2-800px.jpg";
 
 export default {
   id: "1014",
