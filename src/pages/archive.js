@@ -40,7 +40,6 @@ const Archive = () => {
             <Meta
               created={created}
               location={location}
-              geolocation={geolocation}
             />
             <PreviewParagraph>{preview} &hellip;</PreviewParagraph>
           </Fragment>
