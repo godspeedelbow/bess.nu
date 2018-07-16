@@ -5,7 +5,7 @@ export default {
   id: "1016",
   title: "Grote en kleine vissers (1)",
   created: "14 juli 2018",
-  location: "Vilagarcia",
+  location: "Vilagarcía de Arousa",
   geolocation: {
     lat: 42.60111111,
     lng: -8.77250000
