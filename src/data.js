@@ -23,8 +23,10 @@ import article1020 from "./assets/data/logboek/1020";
 import article1021 from "./assets/data/logboek/1021";
 import article1022 from "./assets/data/logboek/1022";
 import article1023 from "./assets/data/logboek/1023";
+import article1024 from "./assets/data/logboek/1024";
 
 const articles = [
+  article1024,
   article1023,
   article1022,
   article1021,
