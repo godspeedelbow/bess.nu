@@ -3,16 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Paragraph from "./paragraph";
+import Panel from "./panel";
 import { previousArticle, nextArticle } from "../data";
-
-const Panel = styled.div`
-  margin-top: 20px;
-  border-bottom: 2px solid #bbb;
-  background-color: #f5f5f5;
-
-  padding: 20px 15px 10px;
-`;
 
 const Title = styled.h3`
   --x-height-multiplier: 0.342;
@@ -36,16 +28,6 @@ const Title = styled.h3`
   @media(min-width: 800px) {
     font-size: 22px;
   }
-`;
-
-const SubTitle = styled(Paragraph)`
-  font-size: 1em;
-  margin: 0;
-  padding: 0;
-`;
-
-const PreviewTitle = styled(SubTitle)`
-  margin-top: 0;
 `;
 
 const NeighborArticles = ({ article }) => {

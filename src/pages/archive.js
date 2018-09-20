@@ -26,7 +26,6 @@ const Archive = () => {
           title,
           created,
           location,
-          geolocation,
           paragraphs
         } = article;
         const [paragraph] = paragraphs;

@@ -7,13 +7,7 @@ import isEmail from 'is-email';
 import styled from "styled-components";
 import 'formdata-polyfill';
 
-const Panel = styled.div`
-  margin-top: 20px;
-  border-bottom: 2px solid #bbb;
-  background-color: #f5f5f5;
-
-  padding: 20px 15px 10px;
-`;
+import Panel from "./panel";
 
 const SubTitle = styled.h3`
   --x-height-multiplier: 0.342;
