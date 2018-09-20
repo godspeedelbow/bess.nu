@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import Header from "./header";
 import Article from "./article";
@@ -7,6 +7,7 @@ import Bess from "./pages/bess";
 import RoutePage from "./pages/route";
 import Archive from "./pages/archive";
 import Unsubscribe from "./pages/unsubscribe";
+import ScrollToTop from "./shared/scroll-to-top";
 
 import { HashRouter as Router, Route } from "react-router-dom";
 
@@ -28,7 +29,7 @@ const App = () => {
   return (
     <ApolloProvider>
       <Router>
-        <Fragment>
+        <ScrollToTop>
           <Header />
           <Content>
             <Route
@@ -54,7 +55,7 @@ const App = () => {
               }}
             />
           </Content>
-        </Fragment>
+        </ScrollToTop>
       </Router>
     </ApolloProvider>
   );
