@@ -8,6 +8,7 @@ import Photos from "./photos";
 import Title from "../shared/title";
 import Paragraph from "../shared/paragraph";
 import TransparentLink from "../shared/transparent-link";
+import NeighborArticles from "../shared/neighbor-articles";
 
 export default Article;
 
@@ -31,6 +32,7 @@ function Article({ article }) {
       {paragraphs.map(p => <Paragraph>{p}</Paragraph>)}
 
       <Photos photos={photos} />
+      <NeighborArticles article={article} />
       <Subscribe />
     </Fragment>
   );

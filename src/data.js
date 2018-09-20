@@ -61,4 +61,14 @@ const articles = [
 ];
 const [latestArticle] = articles;
 
-export { latestArticle, articles };
+const previousArticle = (article) => {
+  const index = articles.indexOf(article);
+  return articles[index + 1];
+}
+
+const nextArticle = (article) => {
+  const index = articles.indexOf(article);
+  return articles[index - 1];
+}
+
+export { latestArticle, previousArticle, nextArticle, articles };
