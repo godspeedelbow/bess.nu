@@ -24,8 +24,12 @@ import article1021 from "./assets/data/logboek/1021";
 import article1022 from "./assets/data/logboek/1022";
 import article1023 from "./assets/data/logboek/1023";
 import article1024 from "./assets/data/logboek/1024";
+import article1025 from "./assets/data/logboek/1025";
+import article1026 from "./assets/data/logboek/1026";
 
 const articles = [
+  article1026,
+  article1025,
   article1024,
   article1023,
   article1022,
