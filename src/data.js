@@ -33,8 +33,10 @@ import article1031 from "./assets/data/logboek/1031";
 import article1032 from "./assets/data/logboek/1032";
 import article1033 from "./assets/data/logboek/1033";
 import article1034 from "./assets/data/logboek/1034";
+import article1035 from "./assets/data/logboek/1035";
 
 const articles = [
+  article1035,
   article1034,
   article1033,
   article1032,
