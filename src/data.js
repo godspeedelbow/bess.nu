@@ -36,8 +36,10 @@ import article1034 from "./assets/data/logboek/1034";
 import article1035 from "./assets/data/logboek/1035";
 import article1036 from "./assets/data/logboek/1036";
 import article1037 from "./assets/data/logboek/1037";
+import article1038 from "./assets/data/logboek/1038";
 
 const articles = [
+  article1038,
   article1037,
   article1036,
   article1035,
@@ -75,18 +77,18 @@ const articles = [
   article1003,
   article1002,
   article1001,
-  article1000,
+  article1000
 ];
 const [latestArticle] = articles;
 
-const previousArticle = (article) => {
+const previousArticle = article => {
   const index = articles.indexOf(article);
   return articles[index + 1];
-}
+};
 
-const nextArticle = (article) => {
+const nextArticle = article => {
   const index = articles.indexOf(article);
   return articles[index - 1];
-}
+};
 
 export { latestArticle, previousArticle, nextArticle, articles };
