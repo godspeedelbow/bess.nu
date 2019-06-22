@@ -15,10 +15,10 @@ const Title = styled.h1`
   letter-spacing: -0.015em;
 
   font-size: 25px;
-  @media(min-width: 375px) {
+  @media (min-width: 375px) {
     font-size: 30px;
   }
-  @media(min-width: 800px) {
+  @media (min-width: 800px) {
     font-size: 42px;
   }
 `;

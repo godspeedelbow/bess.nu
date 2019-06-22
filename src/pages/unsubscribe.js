@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import { withProps } from 'recompose';
-import { Mutation } from 'react-apollo';
-import gql from 'graphql-tag';
+import { withProps } from "recompose";
+import { Mutation } from "react-apollo";
+import gql from "graphql-tag";
 
 import styled from "styled-components";
 
@@ -39,7 +39,9 @@ const Unsubscribe = ({ email }) => {
           return (
             <Fragment>
               <Title>Uitgeschreven</Title>
-              <p>Je krijgt geen email meer van ons op <strong>{email}</strong>.</p>
+              <p>
+                Je krijgt geen email meer van ons op <strong>{email}</strong>.
+              </p>
             </Fragment>
           );
         }
@@ -47,20 +49,22 @@ const Unsubscribe = ({ email }) => {
         return (
           <Fragment>
             <Title>Uitschrijven voor ons blog</Title>
-            { email
-              ? (
-                <Fragment>
-                  <p>Je staat ingeschreven op ons blog met <strong>{email}</strong>. Wil je je uitschrijven?</p>
-                  <UnsubscribeButton
-                    onClick={() => unsubscribe({ variables: { email } })}
-                    disabled={!!loading}
-                  >
-                    Uitschrijven
-                  </UnsubscribeButton>
-                </Fragment>
-              )
-              : <p>Emailadres ontbreekt.</p>
-            }
+            {email ? (
+              <Fragment>
+                <p>
+                  Je staat ingeschreven op ons blog met <strong>{email}</strong>
+                  . Wil je je uitschrijven?
+                </p>
+                <UnsubscribeButton
+                  onClick={() => unsubscribe({ variables: { email } })}
+                  disabled={!!loading}
+                >
+                  Uitschrijven
+                </UnsubscribeButton>
+              </Fragment>
+            ) : (
+              <p>Emailadres ontbreekt.</p>
+            )}
           </Fragment>
         );
       }}
@@ -68,15 +72,13 @@ const Unsubscribe = ({ email }) => {
   );
 };
 
-const UnsubscribeContainer = withProps(
-  (props) => {
-    const params = new URLSearchParams(props.location.search);
-    const email = params.get('email');
+const UnsubscribeContainer = withProps(props => {
+  const params = new URLSearchParams(props.location.search);
+  const email = params.get("email");
 
-    return {
-      email,
-    };
-  }
-)(Unsubscribe);
+  return {
+    email
+  };
+})(Unsubscribe);
 
 export default UnsubscribeContainer;

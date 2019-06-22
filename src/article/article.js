@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 
 import Subscribe from "../shared/subscribe";
 
@@ -31,7 +31,11 @@ function Article({ article }) {
       </TransparentLink>
       <Meta created={created} location={location} geolocation={geolocation} />
 
-      {paragraphs.map(p => <Paragraph><ReactMarkdown source={p} /></Paragraph>)}
+      {paragraphs.map(p => (
+        <Paragraph>
+          <ReactMarkdown source={p} />
+        </Paragraph>
+      ))}
 
       <Photos photos={photos} />
       <NeighborArticles article={article} />

@@ -16,15 +16,16 @@ const Grid = ({ rows = [], columns = [] }) => {
     <table>
       <thead>
         <tr>
-          {columns.map(col => <Label>label: {col}</Label>)}
+          {columns.map(col => (
+            <Label>label: {col}</Label>
+          ))}
         </tr>
       </thead>
       <tbody>
         {rows.map(row => (
           <tr>
-            {row.map((cell, index) => index === 0
-              ? <Label>{cell}</Label>
-              : <td>{cell}</td>
+            {row.map((cell, index) =>
+              index === 0 ? <Label>{cell}</Label> : <td>{cell}</td>
             )}
           </tr>
         ))}
@@ -34,9 +35,9 @@ const Grid = ({ rows = [], columns = [] }) => {
 };
 
 const StyledGrid = styled(Grid)`
-td {
-  background-color: yellow;
-}
+  td {
+    background-color: yellow;
+  }
 `;
 
 export default StyledGrid;

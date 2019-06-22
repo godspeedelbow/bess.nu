@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Paragraph from "../shared/paragraph";
 
-import getGoogleMapsLink from '../lib/get-google-maps-link';
+import getGoogleMapsLink from "../lib/get-google-maps-link";
 
 const Meta = styled(Paragraph)`
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva,
@@ -28,13 +28,14 @@ const MetaContainer = props => {
     <Meta>
       <strong>datum</strong> {created}
       {" / "}
-      <strong>locatie</strong>
-      {' '}
-      {
-        geolocation
-          ? <a href={getGoogleMapsLink(lat, lng)} target="_blank">{location}</a>
-          : location
-      }
+      <strong>locatie</strong>{" "}
+      {geolocation ? (
+        <a href={getGoogleMapsLink(lat, lng)} target="_blank">
+          {location}
+        </a>
+      ) : (
+        location
+      )}
     </Meta>
   );
 };

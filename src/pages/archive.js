@@ -21,13 +21,7 @@ const Archive = () => {
     <Fragment>
       <Title>Archief</Title>
       {articles.map(article => {
-        const {
-          id,
-          title,
-          created,
-          location,
-          paragraphs
-        } = article;
+        const { id, title, created, location, paragraphs } = article;
         const [paragraph] = paragraphs;
         const preview = paragraph.substring(0, 200);
 
@@ -36,10 +30,7 @@ const Archive = () => {
             <TransparentLink to={`/archief/${id}`}>
               <PreviewTitle>{title}</PreviewTitle>
             </TransparentLink>
-            <Meta
-              created={created}
-              location={location}
-            />
+            <Meta created={created} location={location} />
             <PreviewParagraph>{preview} &hellip;</PreviewParagraph>
           </Fragment>
         );

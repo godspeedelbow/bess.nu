@@ -15,10 +15,10 @@ const SubTitle = styled.h1`
   letter-spacing: -0.015em;
 
   font-size: 22px;
-  @media(min-width: 375px) {
+  @media (min-width: 375px) {
     font-size: 26px;
   }
-  @media(min-width: 800px) {
+  @media (min-width: 800px) {
     font-size: 32px;
   }
 `;

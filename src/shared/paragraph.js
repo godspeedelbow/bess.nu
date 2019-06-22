@@ -12,10 +12,10 @@ const Text = styled.p`
   color: #444444;
 
   font-size: 16px;
-  @media(min-width: 375px) {
+  @media (min-width: 375px) {
     font-size: 17px;
   }
-  @media(min-width: 800px) {
+  @media (min-width: 800px) {
     font-size: 21px;
   }
 `;

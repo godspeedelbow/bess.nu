@@ -22,10 +22,10 @@ const Title = styled.h3`
   letter-spacing: -0.015em;
 
   font-size: 18px;
-  @media(min-width: 375px) {
+  @media (min-width: 375px) {
     font-size: 20px;
   }
-  @media(min-width: 800px) {
+  @media (min-width: 800px) {
     font-size: 22px;
   }
 `;
@@ -40,18 +40,16 @@ const NeighborArticles = ({ article }) => {
       <ul>
         {previous && (
           <li>
-          {previous.created}{': '}
-          <Link to={`/archief/${previous.id}`}>
-            {previous.title}
-          </Link>
+            {previous.created}
+            {": "}
+            <Link to={`/archief/${previous.id}`}>{previous.title}</Link>
           </li>
         )}
         {next && (
           <li>
-            {next.created}{': '}
-            <Link to={`/archief/${next.id}`}>
-              {next.title}
-            </Link>
+            {next.created}
+            {": "}
+            <Link to={`/archief/${next.id}`}>{next.title}</Link>
           </li>
         )}
       </ul>

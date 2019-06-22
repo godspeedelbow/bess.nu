@@ -1,11 +1,11 @@
 import React from "react";
-import { compose, withState, withHandlers } from 'recompose';
-import { Mutation } from 'react-apollo';
-import gql from 'graphql-tag';
-import isEmail from 'is-email';
+import { compose, withState, withHandlers } from "recompose";
+import { Mutation } from "react-apollo";
+import gql from "graphql-tag";
+import isEmail from "is-email";
 
 import styled from "styled-components";
-import 'formdata-polyfill';
+import "formdata-polyfill";
 
 import Panel from "./panel";
 
@@ -25,10 +25,10 @@ const SubTitle = styled.h3`
   letter-spacing: -0.015em;
 
   font-size: 18px;
-  @media(min-width: 375px) {
+  @media (min-width: 375px) {
     font-size: 20px;
   }
-  @media(min-width: 800px) {
+  @media (min-width: 800px) {
     font-size: 22px;
   }
 `;
@@ -40,7 +40,7 @@ const Email = styled.input`
   margin-right: 10px;
   margin-top: 10px;
   font-size: 15px;
-  @media(min-width: 800px) {
+  @media (min-width: 800px) {
     width: 35%;
   }
 `;
@@ -75,7 +75,14 @@ const Error = styled.div`
   color: #333;
 `;
 
-const Subscribe = ({ onSubmit, onChange, localError, data, loading, error }) => {
+const Subscribe = ({
+  onSubmit,
+  onChange,
+  localError,
+  data,
+  loading,
+  error
+}) => {
   const disabled = !!loading;
 
   if (data) {
@@ -91,8 +98,16 @@ const Subscribe = ({ onSubmit, onChange, localError, data, loading, error }) => 
     <Panel>
       <SubTitle>Wil je een seintje als we een nieuw bericht plaatsen?</SubTitle>
       <form onSubmit={onSubmit}>
-        <Email disabled={disabled} type="email" name="email" placeholder="je emailadres" onChange={onChange} />
-        <SubscribeButton disabled={disabled} type="submit">Hou me op de hoogte</SubscribeButton>
+        <Email
+          disabled={disabled}
+          type="email"
+          name="email"
+          placeholder="je emailadres"
+          onChange={onChange}
+        />
+        <SubscribeButton disabled={disabled} type="submit">
+          Hou me op de hoogte
+        </SubscribeButton>
       </form>
       <Error>{error || localError}</Error>
     </Panel>
@@ -100,42 +115,42 @@ const Subscribe = ({ onSubmit, onChange, localError, data, loading, error }) => 
 };
 
 const SubscribeContainer = compose(
-  withState('localError', 'setLocalError', null),
+  withState("localError", "setLocalError", null),
   withHandlers({
     onClick: ({ expand }) => () => expand(true),
-    onSubmit: ({ subscribe, setLocalError }) => (event) => {
+    onSubmit: ({ subscribe, setLocalError }) => event => {
       event.preventDefault();
 
       const formData = new FormData(event.target);
-      const email = formData.get('email');
+      const email = formData.get("email");
 
       if (!email) {
-        setLocalError('Vul een emailadres in.');
+        setLocalError("Vul een emailadres in.");
         return;
       }
 
       if (!isEmail(email)) {
-        setLocalError('Vul een geldig emailadres in.');
+        setLocalError("Vul een geldig emailadres in.");
         return;
       }
 
       subscribe({ variables: { email } });
     },
-    onChange: ({ setLocalError }) => () => setLocalError(null),
+    onChange: ({ setLocalError }) => () => setLocalError(null)
   })
 )(Subscribe);
 
 export default () => {
   return (
     <Mutation mutation={SUBSCRIBE}>
-      {(subscribe, { loading, error, data }) =>
+      {(subscribe, { loading, error, data }) => (
         <SubscribeContainer
           subscribe={subscribe}
           loading={loading}
           error={error && error.message}
           data={data}
         />
-      }
+      )}
     </Mutation>
   );
 };
