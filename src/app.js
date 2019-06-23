@@ -13,8 +13,8 @@ import { HashRouter as Router, Route } from "react-router-dom";
 
 import styled from "styled-components";
 
-import { latestArticle, articles } from "./data";
-import ApolloProvider from "./providers/apollo.provider";
+import ApolloProvider from "./components/apollo.provider";
+import { GetArticles } from "./components";
 
 const Content = styled.div`
   max-width: 740px;
@@ -28,35 +28,51 @@ const Content = styled.div`
 const App = () => {
   return (
     <ApolloProvider>
-      <Router>
-        <ScrollToTop>
-          <Header />
-          <Content>
-            <Route
-              exact
-              path="/"
-              render={() => {
-                return <Article article={latestArticle} />;
-              }}
-            />
-            <Route exact path="/uitschrijven" component={Unsubscribe} />
-            <Route exact path="/crew" component={Crew} />
-            <Route exact path="/bess" component={Bess} />
-            <Route exact path="/route" component={RoutePage} />
-            <Route exact path="/archief" component={Archive} />
-            <Route
-              exact
-              path="/archief/:id"
-              render={props => {
-                const articleId = props.match.params.id;
-                const article = articles.find(({ id }) => id === articleId);
+      <GetArticles>
+        {({ articles, latestArticle }) => {
+          return (
+            <Router>
+              <ScrollToTop>
+                <Header />
+                <Content>
+                  <Route
+                    exact
+                    path="/"
+                    render={() => {
+                      return (
+                        <Article article={latestArticle} articles={articles} />
+                      );
+                    }}
+                  />
+                  <Route exact path="/uitschrijven" component={Unsubscribe} />
+                  <Route exact path="/crew" component={Crew} />
+                  <Route exact path="/bess" component={Bess} />
+                  <Route exact path="/route" component={RoutePage} />
+                  <Route
+                    exact
+                    path="/archief"
+                    render={() => <Archive articles={articles} />}
+                  />
+                  <Route
+                    exact
+                    path="/archief/:id"
+                    render={props => {
+                      const articleId = props.match.params.id;
+                      const article = articles.find(
+                        ({ id }) => id === articleId
+                      );
 
-                return article ? <Article article={article} /> : null;
-              }}
-            />
-          </Content>
-        </ScrollToTop>
-      </Router>
+                      return article ? (
+                        <Article article={article} articles={articles} />
+                      ) : null;
+                    }}
+                  />
+                </Content>
+              </ScrollToTop>
+            </Router>
+          );
+        }}
+      </GetArticles>
     </ApolloProvider>
   );
 };
