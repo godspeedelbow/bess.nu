@@ -14,7 +14,7 @@ import NeighborArticles from "../shared/neighbor-articles";
 
 export default Article;
 
-function Article({ article }) {
+function Article({ articles, article }) {
   const {
     id,
     title = "Geen titel",
@@ -38,7 +38,7 @@ function Article({ article }) {
       ))}
 
       <Photos photos={photos} />
-      <NeighborArticles article={article} />
+      <NeighborArticles articles={articles} article={article} />
       <Subscribe />
     </Fragment>
   );

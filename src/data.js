@@ -85,12 +85,12 @@ const articles = [
 ];
 const [latestArticle] = articles;
 
-const previousArticle = article => {
+const previousArticle = (articles, article) => {
   const index = articles.indexOf(article);
   return articles[index + 1];
 };
 
-const nextArticle = article => {
+const nextArticle = (articles, article) => {
   const index = articles.indexOf(article);
   return articles[index - 1];
 };

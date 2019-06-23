@@ -30,9 +30,9 @@ const Title = styled.h3`
   }
 `;
 
-const NeighborArticles = ({ article }) => {
-  const previous = previousArticle(article);
-  const next = nextArticle(article);
+const NeighborArticles = ({ articles = [], article }) => {
+  const previous = previousArticle(articles, article);
+  const next = nextArticle(articles, article);
 
   return (
     <Panel>

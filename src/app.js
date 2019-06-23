@@ -39,7 +39,9 @@ const App = () => {
                     exact
                     path="/"
                     render={() => {
-                      return <Article article={latestArticle} />;
+                      return (
+                        <Article article={latestArticle} articles={articles} />
+                      );
                     }}
                   />
                   <Route exact path="/uitschrijven" component={Unsubscribe} />
@@ -60,7 +62,9 @@ const App = () => {
                         ({ id }) => id === articleId
                       );
 
-                      return article ? <Article article={article} /> : null;
+                      return article ? (
+                        <Article article={article} articles={articles} />
+                      ) : null;
                     }}
                   />
                 </Content>
