@@ -1,7 +1,7 @@
 import React from "react";
 
 import { articles } from "../data";
-import { GraphCMSQuery } from "./";
+import { GraphCMSQuery, Loading } from "./";
 import gql from "graphql-tag";
 
 export default GetArticles;
@@ -42,7 +42,7 @@ function GetArticles(props) {
           return "Oeps, er is iets fout gegaan. Stuur een mail naar eelke@boezeman.com als het probleem zich voor blijft doen.";
         }
         if (loading) {
-          return "Loading ...";
+          return <Loading />;
         }
         const merged = [...data.articles.map(asStaticArticle), ...articles];
         const [latestArticle] = merged;
