@@ -15,7 +15,7 @@ const LoadingContainer = styled.div`
   position: relative;
   width: 64px;
   height: 64px;
-  margin: 20% calc(50% - 64px);
+  margin: 30% calc(50% - 64px / 2);
 
   div {
     position: absolute;
