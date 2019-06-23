@@ -11,10 +11,8 @@ import Title from "../shared/title";
 import Paragraph from "../shared/paragraph";
 import TransparentLink from "../shared/transparent-link";
 import NeighborArticles from "../shared/neighbor-articles";
-import { GraphCMSQuery } from "../components";
 
 export default Article;
-export { GraphCMSArticle };
 
 function Article({ article }) {
   const {
@@ -41,40 +39,6 @@ function Article({ article }) {
 
       <Photos photos={photos} />
       <NeighborArticles article={article} />
-      <Subscribe />
-    </Fragment>
-  );
-}
-
-function GraphCMSArticle({ article }) {
-  const {
-    id,
-    title = "Geen titel",
-    created,
-    location: { latitude, longitude },
-    locationName,
-    body,
-    photos = []
-  } = article;
-  return (
-    <Fragment>
-      <TransparentLink to={`/archief/${id}`}>
-        <Title>{title}</Title>
-      </TransparentLink>
-      <Meta
-        created={created}
-        location={locationName}
-        geolocation={{
-          lat: latitude,
-          lng: longitude
-        }}
-      />
-
-      <Paragraph>
-        <ReactMarkdown source={body.markdown} />
-      </Paragraph>
-      <Photos photos={photos} />
-      {/* <NeighborArticles article={article} /> */}
       <Subscribe />
     </Fragment>
   );

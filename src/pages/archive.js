@@ -8,15 +8,13 @@ import Meta from "../article/meta";
 import Paragraph from "../shared/paragraph";
 import TransparentLink from "../shared/transparent-link";
 
-import { articles } from "../data";
-
 const PreviewTitle = styled(SubTitle)`
   margin-top: 0;
 `;
 
 const PreviewParagraph = styled(Paragraph)``;
 
-const Archive = () => {
+const Archive = ({ articles }) => {
   return (
     <Fragment>
       <Title>Archief</Title>
