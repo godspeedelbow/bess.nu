@@ -24,9 +24,12 @@ const LATEST_ARTICLE_QUERY = gql`
         lng: longitude
       }
       location: locationName
+      # rename to assets!
       photos(orderBy: title_ASC) {
         src: url(transformation: { image: { resize: { width: 800 } } })
+        srcOriginal: url
         title
+        mimeType
       }
     }
   }

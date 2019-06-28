@@ -12,12 +12,21 @@ const Title = styled(Paragraph)`
 
 const Photos = ({ photos }) => (
   <Fragment>
-    {photos.map(photo => (
-      <Fragment>
-        <Photo src={photo.src} alt={photo.title} title={photo.title} />
-        <Title>{photo.title}</Title>
-      </Fragment>
-    ))}
+    {photos.map(photo => {
+      const { title, src, srcOriginal, mimeType = "" } = photo;
+      return (
+        <Fragment>
+          {mimeType.includes("video") ? (
+            <video width="100%" controls>
+              <source src={srcOriginal} type="video/mp4" />
+            </video>
+          ) : (
+            <Photo src={src} alt={title} title={title} />
+          )}
+          <Title>{title}</Title>
+        </Fragment>
+      );
+    })}
   </Fragment>
 );
 

@@ -17,7 +17,7 @@ import ApolloProvider from "./components/apollo.provider";
 import { GetArticles } from "./components";
 
 const Content = styled.div`
-  max-width: 740px;
+  max-width: 800px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
