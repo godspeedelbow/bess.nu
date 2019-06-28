@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/1024-18-augustus-2018-het-begint-ineens-te-waaien-800px.768223d6.jpg"
   },
   {
-    "revision": "33182de02ed028c6feae",
+    "revision": "0569b36289a467ed3871",
     "url": "/static/css/main.5e14d4e5.chunk.css"
   },
   {
@@ -284,8 +284,8 @@ self.__precacheManifest = [
     "url": "/static/media/1023-13-augustus-2018-celta-de-vigo-een-middenmoter-maar-wel-met-een-bijzonder-stadion-800px.a2ad5c1d.jpg"
   },
   {
-    "revision": "33182de02ed028c6feae",
-    "url": "/static/js/main.2371b525.chunk.js"
+    "revision": "0569b36289a467ed3871",
+    "url": "/static/js/main.061f07af.chunk.js"
   },
   {
     "revision": "a8f94d4e798fa3c1ab7f012ccbac3d24",
@@ -564,7 +564,7 @@ self.__precacheManifest = [
     "url": "/static/media/IJmuiden 26062011-14-800px.c825789f.jpg"
   },
   {
-    "revision": "c0ba7e8c058a048ecccce48523b8cd2c",
+    "revision": "9adb11b68489cadfac4972d9887d900c",
     "url": "/index.html"
   }
 ];
