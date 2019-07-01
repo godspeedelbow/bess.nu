@@ -130,16 +130,14 @@ const Subscribe = ({
         />
         <StyledToggle
           checked={toggle}
-          name="burritoIsReady"
           onChange={event => {
             const value = event.target.checked;
-            console.log(`*** value`, value);
             setToggle(value);
           }}
         />
 
         <SubscribeButton disabled={disabled} type="submit">
-          {toggle ? "Hou me op de hoogte" : "Schrijf me uit"}
+          {toggle ? "Hou me op de hoogte" : "Laat me met rust"}
         </SubscribeButton>
       </form>
       <Error>{error || localError}</Error>
