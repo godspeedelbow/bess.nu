@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "768223d6eeddf374554514d8b86df053",
-    "url": "/static/media/1024-18-augustus-2018-het-begint-ineens-te-waaien-800px.768223d6.jpg"
+    "revision": "a2ad5c1d3bb4d877e304ac20c44888b7",
+    "url": "/static/media/1023-13-augustus-2018-celta-de-vigo-een-middenmoter-maar-wel-met-een-bijzonder-stadion-800px.a2ad5c1d.jpg"
   },
   {
-    "revision": "0569b36289a467ed3871",
+    "revision": "f8a769ea773f52865a69",
     "url": "/static/css/main.5e14d4e5.chunk.css"
   },
   {
@@ -12,8 +12,12 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "72873d3728fe3db446f2",
-    "url": "/static/js/2.ce67526c.chunk.js"
+    "revision": "c825789fdc45d55719d8516a2eb6ceed",
+    "url": "/static/media/IJmuiden 26062011-14-800px.c825789f.jpg"
+  },
+  {
+    "revision": "8871687a60e49fa9ffe1",
+    "url": "/static/js/2.f77c5c7d.chunk.js"
   },
   {
     "revision": "2d30da4cd41701d8664b817bff81dfd2",
@@ -280,12 +284,12 @@ self.__precacheManifest = [
     "url": "/static/media/1023-13-augustus-2018-strand-met-zwembaden-voor-kinderen-op-de-boulevard-verboden-voor-ouders-800px.3b810897.jpg"
   },
   {
-    "revision": "a2ad5c1d3bb4d877e304ac20c44888b7",
-    "url": "/static/media/1023-13-augustus-2018-celta-de-vigo-een-middenmoter-maar-wel-met-een-bijzonder-stadion-800px.a2ad5c1d.jpg"
+    "revision": "f8a769ea773f52865a69",
+    "url": "/static/js/main.a196a2fc.chunk.js"
   },
   {
-    "revision": "0569b36289a467ed3871",
-    "url": "/static/js/main.061f07af.chunk.js"
+    "revision": "768223d6eeddf374554514d8b86df053",
+    "url": "/static/media/1024-18-augustus-2018-het-begint-ineens-te-waaien-800px.768223d6.jpg"
   },
   {
     "revision": "a8f94d4e798fa3c1ab7f012ccbac3d24",
@@ -560,11 +564,11 @@ self.__precacheManifest = [
     "url": "/static/media/IJmuiden 26062011-13-800px.1861f498.jpg"
   },
   {
-    "revision": "c825789fdc45d55719d8516a2eb6ceed",
-    "url": "/static/media/IJmuiden 26062011-14-800px.c825789f.jpg"
+    "revision": "8871687a60e49fa9ffe1",
+    "url": "/static/css/2.df4afe45.chunk.css"
   },
   {
-    "revision": "9adb11b68489cadfac4972d9887d900c",
+    "revision": "13f0c909d163f9259e12cfb5340de05f",
     "url": "/index.html"
   }
 ];
