@@ -1,13 +1,16 @@
 import React from "react";
-import { compose, withState, withHandlers } from "recompose";
+import { compose, withState, withHandlers, withProps } from "recompose";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import isEmail from "is-email";
-
+import Toggle from "react-toggle";
 import styled from "styled-components";
-import "formdata-polyfill";
+import { withRouter } from "react-router-dom";
 
 import Panel from "./panel";
+
+import "formdata-polyfill";
+import "react-toggle/style.css"; // for ES6 modules
 
 const SubTitle = styled.h3`
   --x-height-multiplier: 0.342;
@@ -69,6 +72,24 @@ const SUBSCRIBE = gql`
   }
 `;
 
+const StyledToggle = styled(Toggle)`
+  margin-right: 9px;
+  top: 5px;
+
+  &.react-toggle--checked {
+    .react-toggle-track {
+      background-color: #777;
+    }
+
+    .react-toggle-thumb {
+      border-color: #333;
+      &:hover {
+        border-color: #19ab27;
+      }
+    }
+  }
+`;
+
 const Error = styled.div`
   margin-top: 10px;
   min-height: 20px;
@@ -76,6 +97,8 @@ const Error = styled.div`
 `;
 
 const Subscribe = ({
+  toggle,
+  setToggle,
   onSubmit,
   onChange,
   localError,
@@ -93,7 +116,7 @@ const Subscribe = ({
       </Panel>
     );
   }
-
+  console.log(toggle);
   return (
     <Panel>
       <SubTitle>Wil je een seintje als we een nieuw bericht plaatsen?</SubTitle>
@@ -105,8 +128,18 @@ const Subscribe = ({
           placeholder="je emailadres"
           onChange={onChange}
         />
+        <StyledToggle
+          checked={toggle}
+          name="burritoIsReady"
+          onChange={event => {
+            const value = event.target.checked;
+            console.log(`*** value`, value);
+            setToggle(value);
+          }}
+        />
+
         <SubscribeButton disabled={disabled} type="submit">
-          Hou me op de hoogte
+          {toggle ? "Hou me op de hoogte" : "Schrijf me uit"}
         </SubscribeButton>
       </form>
       <Error>{error || localError}</Error>
@@ -115,10 +148,12 @@ const Subscribe = ({
 };
 
 const SubscribeContainer = compose(
+  withRouter,
+  withState("toggle", "setToggle", true),
   withState("localError", "setLocalError", null),
   withHandlers({
     onClick: ({ expand }) => () => expand(true),
-    onSubmit: ({ subscribe, setLocalError }) => event => {
+    onSubmit: ({ history, subscribe, setLocalError, toggle }) => event => {
       event.preventDefault();
 
       const formData = new FormData(event.target);
@@ -134,7 +169,11 @@ const SubscribeContainer = compose(
         return;
       }
 
-      subscribe({ variables: { email } });
+      if (!toggle) {
+        history.push(`/uitschrijven?email=${email}`);
+      } else {
+        subscribe({ variables: { email } });
+      }
     },
     onChange: ({ setLocalError }) => () => setLocalError(null)
   })

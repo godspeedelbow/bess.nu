@@ -10,7 +10,7 @@ import Title from "../shared/title";
 const UnsubscribeButton = styled.button`
   padding: 10px;
   border-radius: 5px;
-  pointer: cursor;
+  cursor: pointer;
 `;
 
 const UNSUBSCRIBE = gql`
