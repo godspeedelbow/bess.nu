@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/1023-13-augustus-2018-celta-de-vigo-een-middenmoter-maar-wel-met-een-bijzonder-stadion-800px.a2ad5c1d.jpg"
   },
   {
-    "revision": "f8a769ea773f52865a69",
+    "revision": "4452539633ef1b1f53e2",
     "url": "/static/css/main.5e14d4e5.chunk.css"
   },
   {
@@ -284,8 +284,8 @@ self.__precacheManifest = [
     "url": "/static/media/1023-13-augustus-2018-strand-met-zwembaden-voor-kinderen-op-de-boulevard-verboden-voor-ouders-800px.3b810897.jpg"
   },
   {
-    "revision": "f8a769ea773f52865a69",
-    "url": "/static/js/main.a196a2fc.chunk.js"
+    "revision": "4452539633ef1b1f53e2",
+    "url": "/static/js/main.899e7d94.chunk.js"
   },
   {
     "revision": "768223d6eeddf374554514d8b86df053",
@@ -568,7 +568,7 @@ self.__precacheManifest = [
     "url": "/static/css/2.df4afe45.chunk.css"
   },
   {
-    "revision": "13f0c909d163f9259e12cfb5340de05f",
+    "revision": "03995c52746a77a875d46d73f1a48ca7",
     "url": "/index.html"
   }
 ];
