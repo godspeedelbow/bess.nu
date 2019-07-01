@@ -14,7 +14,7 @@ const NavBar = styled.div`
 `;
 
 const NavBarContent = styled.div`
-  max-width: 740px;
+  max-width: 800px;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
