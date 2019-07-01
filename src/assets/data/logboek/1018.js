@@ -33,11 +33,12 @@ export default {
     },
     {
       src: photo4,
-      title: "Bij hoog water ligt de haven weer vol; de korven klaar voor de volgende dag."
+      title:
+        "Bij hoog water ligt de haven weer vol; de korven klaar voor de volgende dag."
     },
     {
       src: photo5,
       title: "Ook bewoners zoeken schelpen op het strand."
-    },
+    }
   ]
 };

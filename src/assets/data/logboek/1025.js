@@ -18,7 +18,7 @@ export default {
   },
   paragraphs: [
     `Na het afscheid van Marleen blijven we twee weken liggen in de haven van Punta Lagoa. Dit is een super relaxte haven, waar we de hoofdprijs van € 10 per nacht betalen. We moeten dan wel iedere dag minstens 20 minuten omhoog klimmen en klauteren om de winkelstraat te bereiken voor onze dagelijkse boodschappen. Maar dat is natuurlijk goed voor onze conditie, de stappenteller maakt overuren.`,
-    `We maken een klussenlijst voor reparatie, onderhoud en andere huishoudelijke zaken. Die lijst wordt nooit korter: heb je een klusje afgerond en weggestreept, dan komen er minstens twee voor in de plaats. Een bekend verschijnsel onder zeilers. Voorbeelden? We schuren en lakken de ingang van het schip, we repareren vlonders, ruimen de dinghy op, doen de was, maken binnen en buiten schoon schip, knippen haar, herstellen gescheurde kleding en zonnedoeken. En we gaan lekker uit eten, natuurlijk.`,
+    `We maken een klussenlijst voor reparatie, onderhoud en andere huishoudelijke zaken. Die lijst wordt nooit korter: heb je een klusje afgerond en weggestreept, dan komen er minstens twee voor in de plaats. Een bekend verschijnsel onder zeilers. Voorbeelden? We schuren en lakken de ingang van het schip, we repareren vlonders, ruimen de dinghy op, doen de was, maken binnen en buiten schoon schip, knippen haar, herstellen gescheurde kleding en zonnedoeken. En we gaan lekker uit eten, natuurlijk.`
   ],
   photos: [
     {
@@ -52,6 +52,6 @@ export default {
     {
       src: photo8,
       title: "Even uitpuffen tijdens een steile wandeling."
-    },
+    }
   ]
 };

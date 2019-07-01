@@ -18,7 +18,7 @@ export default {
     `De Spanjaarden vieren uitbundig vakantie in augustus. Elk zichzelf respecterende gemeenschap heeft een programma met activiteiten, variërend van kermis voor kinderen, films in de buitenlucht en muziekvoorstellingen. De mensen met boten zitten op het water. En het is ineens lastig om in kleinere havens een ligplaats te vinden. In de grotere havens van Vigo, Sanxenxo en Baiona is altijd wel plek.`,
     `Marleen is tien dagen aan boord en brengt het mooie zomerweer uit Nederland mee. De eerste vijf dagen is het dik boven de 30 graden en dan is het ook aan boord van Bess erg warm - ook onder de zonnedoeken. Maar water en strand zijn hier altijd dichtbij.`,
     `De stranden lopen vanaf 9 uur 's avonds leeg. Dan wordt er op straat gegeten en gedronken. Jong en oud zijn tot een uur of 12 's nachts op straat te vinden. Er zijn muziekoptredens die vaak tot in de kleine uurtjes doorgaan. Er was zelfs een band die pas om half acht 's ochtends de stekkers eruit trok.`,
-    `Augustus. Aan boord van Bess wordt geluierd, gezwommen, gelezen, gecrypto-ed, gedronken en gekaart.`,
+    `Augustus. Aan boord van Bess wordt geluierd, gezwommen, gelezen, gecrypto-ed, gedronken en gekaart.`
   ],
   photos: [
     {
@@ -44,6 +44,6 @@ export default {
     {
       src: photo6,
       title: "Lex koelt af in zee."
-    },
+    }
   ]
 };

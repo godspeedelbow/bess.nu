@@ -18,16 +18,16 @@ export default {
     `Eenmaal in de sluis stort het water vanuit de haven naar beneden en wij worden met een
     rotgang vier meter omhoog getild. Dan gaan de sluisdeuren open. We zijn binnen.`,
     `Komende weken willen we meer havens aan de zuidkust bezoeken. Havens die ook allemaal
-    droogvallen. Dat doet een groot beroep op onze rekenvaardigheden.`,
+    droogvallen. Dat doet een groot beroep op onze rekenvaardigheden.`
   ],
   photos: [
     {
       src: photo1,
-      title: 'Een local weet precies hoe hij moet varen zonder vast te lopen.'
+      title: "Een local weet precies hoe hij moet varen zonder vast te lopen."
     },
     {
       src: photo2,
-      title: 'Net op tijd binnen!'
-    },
+      title: "Net op tijd binnen!"
+    }
   ]
 };

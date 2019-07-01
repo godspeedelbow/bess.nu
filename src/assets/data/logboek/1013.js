@@ -44,7 +44,6 @@ export default {
     {
       src: photo6,
       title: `Met een bloedgang om de boei heen`
-    },
+    }
   ]
 };
-

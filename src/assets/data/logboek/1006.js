@@ -23,16 +23,18 @@ export default {
     voor minstens 3500 pond over de toonbank gaat. Sla je de hoek om, daal je via een smal
     trapje af naar een onooglijk winkeltje, waar een uiterst vriendelijke meneer je Casio-horloge
     secuur van een nieuw bandje voorziet. En ook nog de batterij vernieuwt voor de wereldse
-    totaalprijs van 8 pond.`,
+    totaalprijs van 8 pond.`
   ],
   photos: [
     {
       src: photo1,
-      title: 'Een hele grote loupe voor een heel klein batterijtje. 20 minuten werk.'
+      title:
+        "Een hele grote loupe voor een heel klein batterijtje. 20 minuten werk."
     },
     {
       src: photo2,
-      title: 'Zo op het oog ziet de pier in Eastbourne er prachtig uit. Dichterbij valt dat vies tegen.'
-    },
+      title:
+        "Zo op het oog ziet de pier in Eastbourne er prachtig uit. Dichterbij valt dat vies tegen."
+    }
   ]
 };

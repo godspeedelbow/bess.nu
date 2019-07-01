@@ -11,7 +11,7 @@ export default {
   created: "22 juni 2018",
   location: "A Coruña",
   geolocation: {
-    lat: 43.38500000,
+    lat: 43.385,
     lng: -8.60361111
   },
   paragraphs: [
@@ -44,7 +44,6 @@ export default {
     {
       src: photo6,
       title: `Lange rijen om de kathedraal van Santiago de Compastello in te gaan.`
-    },
+    }
   ]
 };
-

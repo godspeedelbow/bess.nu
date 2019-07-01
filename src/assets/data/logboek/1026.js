@@ -39,6 +39,6 @@ export default {
     {
       src: photo5,
       title: "Uitzicht op de haven van Baiona."
-    },
+    }
   ]
 };

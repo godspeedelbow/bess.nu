@@ -32,7 +32,8 @@ export default {
     },
     {
       src: photo3,
-      title: "We eten met Hans en Christien in een strandtentje met uitzicht op zee(mist)."
+      title:
+        "We eten met Hans en Christien in een strandtentje met uitzicht op zee(mist)."
     },
     {
       src: photo4,
@@ -41,6 +42,6 @@ export default {
     {
       src: photo5,
       title: "Wij wachten tot de mist is opgetrokken."
-    },
+    }
   ]
 };

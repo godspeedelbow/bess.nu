@@ -21,28 +21,30 @@ export default {
     belang. De scholen zijn dicht (midterm vakantie) en het is bankholiday. Langs de kade wordt
     op krabbetjes gevist, eten mensen fish-and-chips, de terrassen zitten overvol en het
     archaïsche pontje roeit mensen naar de andere kant van de rivier. Het strand van Weymouth
-    is net zoals vroeger: druk en veel mensen in zee of pootje badend.`,
+    is net zoals vroeger: druk en veel mensen in zee of pootje badend.`
   ],
   photos: [
     {
       src: photo1,
-      title: 'Portsmouth: herkenbaar aan de Spinnaker toren.'
+      title: "Portsmouth: herkenbaar aan de Spinnaker toren."
     },
     {
       src: photo2,
-      title: 'Lekker plekkie langs de rivier.'
+      title: "Lekker plekkie langs de rivier."
     },
     {
       src: photo3,
-      title: 'Gezellige drukte in Weymouth met heel veel fish and chips. Best wel dikke mensen hier.'
+      title:
+        "Gezellige drukte in Weymouth met heel veel fish and chips. Best wel dikke mensen hier."
     },
     {
       src: photo4,
-      title: 'Hier heeft de tijd stilgestaan.'
+      title: "Hier heeft de tijd stilgestaan."
     },
     {
       src: photo5,
-      title: 'Strand van Weymouth. In de afgelopen 50 jaar is hier niks veranderd.'
-    },
+      title:
+        "Strand van Weymouth. In de afgelopen 50 jaar is hier niks veranderd."
+    }
   ]
 };

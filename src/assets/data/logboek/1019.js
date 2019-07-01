@@ -16,7 +16,7 @@ export default {
     `Als we bij Ons aankomen, zit de wind in de verkeerde hoek. De zee bouwt op en de ankerplek is zeer hobbelig. Daar hebben we geen zin in. We varen door naar Portonovo - de eerstvolgende haven  - en nemen het pontje.`,
     `Op de boot veel Spanjaarden die naar Ons gaan voor de mooie stranden. Op Ons zijn verschillende wandelingen uitgezet. We nemen de hele dag om het eiland rond te lopen en eindigen met een duik in zee op een van de mooie stranden.`,
     `Op Ons zijn twee bijzonderheden. Volgens de informatieborden leven er grote reptielen die op het vasteland niet meer voorkomen. We hebben ze niet kunnen zien.`,
-    `Aan de westkant van het eiland beuken de golven van de oceaan constant op de kust. In de loop der eeuwen zijn er 'furnaces' ontstaan. Dit zijn ondergrondse grotten. Bij sterke golfslag zorgt het in- en uitstromend water voor een loeiend geluid. Zo heftig dat men dacht dat bij de 'Buraco do inferno' de doorgang was naaar de onderwereld en je de dolende zielen kon horen.`,
+    `Aan de westkant van het eiland beuken de golven van de oceaan constant op de kust. In de loop der eeuwen zijn er 'furnaces' ontstaan. Dit zijn ondergrondse grotten. Bij sterke golfslag zorgt het in- en uitstromend water voor een loeiend geluid. Zo heftig dat men dacht dat bij de 'Buraco do inferno' de doorgang was naaar de onderwereld en je de dolende zielen kon horen.`
   ],
   photos: [
     {
@@ -30,6 +30,6 @@ export default {
     {
       src: photo3,
       title: "De ondergrondse grot bij Buraco do inferno."
-    },
+    }
   ]
 };

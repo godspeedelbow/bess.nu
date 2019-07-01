@@ -19,5 +19,5 @@ export default {
     `- anker opnieuw uitgooien. Of twee ankers zetten.`,
     `Omdat het de vorige dag hard gewaaid had, en het schip behoorlijk had liggen draaien, zijn wij ervan uitgegaan dat het anker voldoende ingegraven was. We lagen immers nog steeds op dezelfde afstand van de schepen om ons heen (die dus ook allemaal 180 graden gedraaid waren) en even ver van de wal. De zee was inmiddels rustig en de wind gekalmeerd.`,
     `We keken elkaar aan en dachten allebei hetzelfde: het ankeralarm gaat niet meer aan, we vertrouwen op ons superieure Rocna-anker en en duiken ons bed weer in. Rust in de tent. Drie uur later werden we fris als een hoentje wakker. Uitstekend geslapen.`
-  ],
+  ]
 };

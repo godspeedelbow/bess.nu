@@ -30,11 +30,11 @@ export default {
   ],
   photos: [
     {
-      src: photo1,
+      src: photo1
     },
     {
       src: photo2,
-      title: 'Ondanks het slechte zicht besluiten we toch uit te varen.'
-    },
+      title: "Ondanks het slechte zicht besluiten we toch uit te varen."
+    }
   ]
 };

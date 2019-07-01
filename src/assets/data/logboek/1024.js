@@ -24,6 +24,6 @@ export default {
     {
       src: photo2,
       title: "Onze barometer staat al dagen op 1017-1018 Hpa."
-    },
+    }
   ]
 };

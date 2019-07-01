@@ -17,5 +17,5 @@ export default {
     `- als er bergen in de buurt zijn. Dan ontstaan er valwinden waardoor de wind aantrekt. Dit was volgens ons aan de hand in de ria in Noord-Spanje.`,
     `Als we op zee een kaap ronden, krijg je hetzelfde effect. We houden rekening met extra wind en blijven dan ook meestal ver van de kaap vandaan.`,
     `Dit is wat wij er van snappen. Konden jullie het volgen?`
-  ],
+  ]
 };

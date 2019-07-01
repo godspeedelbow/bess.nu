@@ -24,7 +24,7 @@ const MenuItem = styled(Link)`
   cursor: pointer;
   display: inline-block;
   padding: 10px;
-  @media(min-width: 400px) {
+  @media (min-width: 400px) {
     padding: 10px 15px;
   }
   &:first-child {
