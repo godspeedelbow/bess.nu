@@ -69,9 +69,24 @@ function asStaticArticle(graphCMSArticle) {
     }
   );
 
+  const photos = (graphCMSArticle.photos || []).map(photo => {
+    return {
+      ...photo,
+      src: removeExifData(photo.src)
+    };
+  });
   return {
     ...graphCMSArticle,
     created,
-    paragraphs
+    paragraphs,
+    photos
   };
+}
+
+// TODO: fix in graphql query once that's possible
+function removeExifData(imageUrl) {
+  return imageUrl.replace(
+    "resize=width:800",
+    "resize=width:800/rotate=deg:exif"
+  );
 }
