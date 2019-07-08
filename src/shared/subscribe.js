@@ -116,7 +116,7 @@ const Subscribe = ({
       </Panel>
     );
   }
-  console.log(toggle);
+
   return (
     <Panel>
       <SubTitle>Wil je een seintje als we een nieuw bericht plaatsen?</SubTitle>
