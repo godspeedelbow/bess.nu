@@ -2,10 +2,7 @@ import React from "react";
 
 import Header from "./header";
 import Article from "./article";
-import Crew from "./pages/crew";
-import Bess from "./pages/bess";
-import RoutePage from "./pages/route";
-import Archive from "./pages/archive";
+import { Crew, Bess, Newsletter, RoutePage, Archive } from "./pages";
 import Unsubscribe from "./pages/unsubscribe";
 import ScrollToTop from "./shared/scroll-to-top";
 
@@ -50,13 +47,25 @@ const App = () => {
                   <Route exact path="/route" component={RoutePage} />
                   <Route
                     exact
+                    path="/nieuwsbrief"
+                    render={() => {
+                      return (
+                        <Newsletter
+                          latestArticle={latestArticle}
+                          articles={articles}
+                        />
+                      );
+                    }}
+                  />
+                  <Route
+                    exact
                     path="/archief"
                     render={() => <Archive articles={articles} />}
                   />
                   <Route
                     exact
                     path="/archief/:id"
-                    render={props => {
+                    render={(props) => {
                       const articleId = props.match.params.id;
                       const article = articles.find(
                         ({ id }) => id === articleId

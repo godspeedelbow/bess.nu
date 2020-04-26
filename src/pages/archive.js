@@ -8,6 +8,8 @@ import Meta from "../article/meta";
 import Paragraph from "../shared/paragraph";
 import TransparentLink from "../shared/transparent-link";
 
+import { getPreview } from "../lib";
+
 const PreviewTitle = styled(SubTitle)`
   margin-top: 0;
 `;
@@ -18,10 +20,9 @@ const Archive = ({ articles }) => {
   return (
     <Fragment>
       <Title>Archief</Title>
-      {articles.map(article => {
-        const { id, title, created, location, paragraphs } = article;
-        const [paragraph] = paragraphs;
-        const preview = paragraph.substring(0, 200);
+      {articles.map((article) => {
+        const { id, title, created, location } = article;
+        const preview = getPreview(article);
 
         return (
           <Fragment>
