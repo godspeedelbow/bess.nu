@@ -1,8 +1,8 @@
 import React from "react";
-
 import styled from "styled-components";
-
 import { Link } from "react-router-dom";
+
+import { useAuthentication } from "./hooks";
 
 const NavBar = styled.div`
   margin: 0;
@@ -37,17 +37,32 @@ const MenuItem = styled(Link)`
   text-decoration: none;
 `;
 
-const Header = () => (
-  <NavBar>
-    <NavBarContent>
-      {/* insert logo bess here */}
-      <MenuItem to="/">home</MenuItem>
-      <MenuItem to="/archief">archief</MenuItem>
-      <MenuItem to="/crew">crew</MenuItem>
-      <MenuItem to="/route">route</MenuItem>
-      <MenuItem to="/bess">bess</MenuItem>
-    </NavBarContent>
-  </NavBar>
-);
+const Header = () => {
+  const { isAuthenticated, logOut } = useAuthentication();
+
+  return (
+    <NavBar>
+      <NavBarContent>
+        {/* insert logo bess here */}
+        <MenuItem to="/">home</MenuItem>
+        <MenuItem to="/archief">archief</MenuItem>
+        <MenuItem to="/crew">crew</MenuItem>
+        <MenuItem to="/route">route</MenuItem>
+        <MenuItem to="/bess">bess</MenuItem>
+        {isAuthenticated ? (
+          <MenuItem
+            to="#"
+            onClick={(event) => {
+              event.preventDefault();
+              logOut();
+            }}
+          >
+            uitloggen
+          </MenuItem>
+        ) : null}
+      </NavBarContent>
+    </NavBar>
+  );
+};
 
 export default Header;

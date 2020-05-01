@@ -5,11 +5,8 @@ import { get } from "lodash-es";
 import styled from "styled-components";
 import { useMutation } from "@apollo/react-hooks";
 
-import { Button, Input, SubTitle } from "../shared/index";
-
-function hasAuthenticatedSession() {
-  return !!sessionStorage.getItem("token");
-}
+import { Button, Input, SubTitle } from "../shared";
+import { useAuthentication } from "../hooks";
 
 const AUTHENTICATE = gql`
   mutation($email: String!, $password: String!) {
@@ -21,14 +18,12 @@ const AUTHENTICATE = gql`
 
 export default function Authenticate({ children }) {
   const [localError, setLocalError] = useState(null);
-  const [isAuthenticated, setAuthenticated] = useState(
-    hasAuthenticatedSession()
-  );
-
+  const onChange = useCallback(() => setLocalError(null), [setLocalError]);
+  const { isAuthenticated, logIn } = useAuthentication();
   const [authenticate, { error }] = useMutation(AUTHENTICATE);
 
   const onSubmit = useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
 
       const formData = new FormData(event.target);
@@ -52,21 +47,19 @@ export default function Authenticate({ children }) {
       }
 
       authenticate({
-        variables: { email, password }
+        variables: { email, password },
       })
-        .then(response => {
+        .then((response) => {
           const token = get(response, "data.login.token");
 
           sessionStorage.setItem("token", token);
 
-          setAuthenticated(true);
+          logIn();
         })
         .catch(console.error);
     },
-    [authenticate, setAuthenticated, setLocalError]
+    [authenticate, logIn, setLocalError]
   );
-
-  const onChange = useCallback(() => setLocalError(null), [setLocalError]);
 
   if (isAuthenticated) {
     return React.Children.only(children);

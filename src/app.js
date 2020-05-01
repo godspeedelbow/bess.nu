@@ -10,7 +10,7 @@ import { HashRouter as Router, Route } from "react-router-dom";
 
 import styled from "styled-components";
 
-import ApolloProvider from "./components/apollo.provider";
+import { AuthenticationProvider, ApolloProvider } from "./components";
 import { GetArticles } from "./components";
 
 const Content = styled.div`
@@ -24,65 +24,70 @@ const Content = styled.div`
 
 const App = () => {
   return (
-    <ApolloProvider>
-      <GetArticles>
-        {({ articles, latestArticle }) => {
-          return (
-            <Router>
-              <ScrollToTop>
-                <Header />
-                <Content>
-                  <Route
-                    exact
-                    path="/"
-                    render={() => {
-                      return (
-                        <Article article={latestArticle} articles={articles} />
-                      );
-                    }}
-                  />
-                  <Route exact path="/uitschrijven" component={Unsubscribe} />
-                  <Route exact path="/crew" component={Crew} />
-                  <Route exact path="/bess" component={Bess} />
-                  <Route exact path="/route" component={RoutePage} />
-                  <Route
-                    exact
-                    path="/nieuwsbrief"
-                    render={() => {
-                      return (
-                        <Newsletter
-                          latestArticle={latestArticle}
-                          articles={articles}
-                        />
-                      );
-                    }}
-                  />
-                  <Route
-                    exact
-                    path="/archief"
-                    render={() => <Archive articles={articles} />}
-                  />
-                  <Route
-                    exact
-                    path="/archief/:id"
-                    render={props => {
-                      const articleId = props.match.params.id;
-                      const article = articles.find(
-                        ({ id }) => id === articleId
-                      );
+    <AuthenticationProvider>
+      <ApolloProvider>
+        <GetArticles>
+          {({ articles, latestArticle }) => {
+            return (
+              <Router>
+                <ScrollToTop>
+                  <Header />
+                  <Content>
+                    <Route
+                      exact
+                      path="/"
+                      render={() => {
+                        return (
+                          <Article
+                            article={latestArticle}
+                            articles={articles}
+                          />
+                        );
+                      }}
+                    />
+                    <Route exact path="/uitschrijven" component={Unsubscribe} />
+                    <Route exact path="/crew" component={Crew} />
+                    <Route exact path="/bess" component={Bess} />
+                    <Route exact path="/route" component={RoutePage} />
+                    <Route
+                      exact
+                      path="/nieuwsbrief"
+                      render={() => {
+                        return (
+                          <Newsletter
+                            latestArticle={latestArticle}
+                            articles={articles}
+                          />
+                        );
+                      }}
+                    />
+                    <Route
+                      exact
+                      path="/archief"
+                      render={() => <Archive articles={articles} />}
+                    />
+                    <Route
+                      exact
+                      path="/archief/:id"
+                      render={(props) => {
+                        const articleId = props.match.params.id;
+                        const article = articles.find(
+                          ({ id }) => id === articleId
+                        );
 
-                      return article ? (
-                        <Article article={article} articles={articles} />
-                      ) : null;
-                    }}
-                  />
-                </Content>
-              </ScrollToTop>
-            </Router>
-          );
-        }}
-      </GetArticles>
-    </ApolloProvider>
+                        return article ? (
+                          <Article article={article} articles={articles} />
+                        ) : null;
+                      }}
+                    />
+                  </Content>
+                </ScrollToTop>
+              </Router>
+            );
+          }}
+        </GetArticles>
+      </ApolloProvider>
+    </AuthenticationProvider>
   );
 };
 
