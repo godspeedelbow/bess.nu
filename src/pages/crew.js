@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
-import Title from "../shared/title";
-import SubTitle from "../shared/sub-title";
-import Paragraph from "../shared/paragraph";
-import Photo from "../shared/photo";
+import Title from "../components/title";
+import SubTitle from "../components/sub-title";
+import Paragraph from "../components/paragraph";
+import Photo from "../components/photo";
 
 import photo1 from "../assets/photos/DSC04756-800px.jpg";
 import photo2 from "../assets/photos/IMG_1407-800px.jpg";

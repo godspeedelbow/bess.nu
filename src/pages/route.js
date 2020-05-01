@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
-import Title from "../shared/title";
-import Paragraph from "../shared/paragraph";
+import Title from "../components/title";
+import Paragraph from "../components/paragraph";
 
 export default Route;
 

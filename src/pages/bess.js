@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 
-import Title from "../shared/title";
-import SubTitle from "../shared/sub-title";
-import Paragraph from "../shared/paragraph";
-import Photo from "../shared/photo";
-import Grid from "../shared/grid";
+import Title from "../components/title";
+import SubTitle from "../components/sub-title";
+import Paragraph from "../components/paragraph";
+import Photo from "../components/photo";
+import Grid from "../components/grid";
 
 import photo1 from "../assets/photos/IJmuiden 26062011-13-800px.jpg";
 import photo2 from "../assets/photos/IJmuiden 26062011-14-800px.jpg";
@@ -40,9 +40,9 @@ function Crew() {
             ["Diesel", "80 l"],
             [
               "Navigatie",
-              "Raymarine plotter Es serie, Quatum radar, AIS, Raymarine i70 displays"
+              "Raymarine plotter Es serie, Quatum radar, AIS, Raymarine i70 displays",
             ],
-            ["Windvaan", "Windpilot Pacific Plus (+ST1000 Raymarine)"]
+            ["Windvaan", "Windpilot Pacific Plus (+ST1000 Raymarine)"],
           ]}
         />
       </Paragraph>
@@ -56,7 +56,7 @@ function Crew() {
             ["Sleepgenerator", "Ampair"],
             ["Zonnepanelen", "1 x Kyocera KC130 (vast achterop)"],
             ["", "1 x Sunpower (90w; overal neer te leggen)"],
-            ["Oplader/omvormer", "Victron Multiplus C12/1600/70-16"]
+            ["Oplader/omvormer", "Victron Multiplus C12/1600/70-16"],
           ]}
         />
       </Paragraph>

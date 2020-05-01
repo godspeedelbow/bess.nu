@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
 import { Authenticate } from "./index";
-import { Button, Panel, Paragraph, SubTitle, Title } from "../shared/index";
+import { Button, Panel, Paragraph, SubTitle, Title } from "../components/index";
 import { getPreview } from "../lib";
 
 export default function Newsletter({ latestArticle }) {

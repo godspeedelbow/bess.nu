@@ -2,15 +2,15 @@ import React, { Fragment } from "react";
 
 import ReactMarkdown from "react-markdown";
 
-import Subscribe from "../shared/subscribe";
+import Subscribe from "../components/subscribe";
 
 import Meta from "./meta";
 import Photos from "./photos";
 
-import Title from "../shared/title";
-import Paragraph from "../shared/paragraph";
-import TransparentLink from "../shared/transparent-link";
-import NeighborArticles from "../shared/neighbor-articles";
+import Title from "../components/title";
+import Paragraph from "../components/paragraph";
+import TransparentLink from "../components/transparent-link";
+import NeighborArticles from "../components/neighbor-articles";
 
 export default Article;
 
@@ -22,7 +22,7 @@ function Article({ articles, article }) {
     location,
     geolocation,
     paragraphs = [],
-    photos = []
+    photos = [],
   } = article;
   return (
     <Fragment>
@@ -31,7 +31,7 @@ function Article({ articles, article }) {
       </TransparentLink>
       <Meta created={created} location={location} geolocation={geolocation} />
 
-      {paragraphs.map(p => (
+      {paragraphs.map((p) => (
         <Paragraph>
           <ReactMarkdown source={p} />
         </Paragraph>

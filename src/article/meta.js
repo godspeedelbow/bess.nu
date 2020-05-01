@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Paragraph from "../shared/paragraph";
+import Paragraph from "../components/paragraph";
 
 import getGoogleMapsLink from "../lib/get-google-maps-link";
 
@@ -20,7 +20,7 @@ const Meta = styled(Paragraph)`
   margin: 0;
 `;
 
-const MetaContainer = props => {
+const MetaContainer = (props) => {
   const { created, location, geolocation } = props;
   const { lat, lng } = geolocation || {};
 

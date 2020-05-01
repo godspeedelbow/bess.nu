@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 
 import styled from "styled-components";
 
-import Title from "../shared/title";
-import SubTitle from "../shared/sub-title";
+import Title from "../components/title";
+import SubTitle from "../components/sub-title";
 import Meta from "../article/meta";
-import Paragraph from "../shared/paragraph";
-import TransparentLink from "../shared/transparent-link";
+import Paragraph from "../components/paragraph";
+import TransparentLink from "../components/transparent-link";
 
 import { getPreview } from "../lib";
 
@@ -20,7 +20,7 @@ const Archive = ({ articles }) => {
   return (
     <Fragment>
       <Title>Archief</Title>
-      {articles.map(article => {
+      {articles.map((article) => {
         const { id, title, created, location } = article;
         const preview = getPreview(article);
 

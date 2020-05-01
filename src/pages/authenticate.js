@@ -5,7 +5,7 @@ import { get } from "lodash-es";
 import styled from "styled-components";
 import { useMutation } from "@apollo/react-hooks";
 
-import { Button, Input, SubTitle } from "../shared";
+import { Button, Input, SubTitle } from "../components";
 import { useAuthentication } from "../hooks";
 
 const AUTHENTICATE = gql`

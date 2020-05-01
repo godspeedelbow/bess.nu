@@ -4,7 +4,7 @@ import Header from "./header";
 import Article from "./article";
 import { Crew, Bess, Newsletter, RoutePage, Archive } from "./pages";
 import Unsubscribe from "./pages/unsubscribe";
-import ScrollToTop from "./shared/scroll-to-top";
+import ScrollToTop from "./components/scroll-to-top";
 
 import { HashRouter as Router, Route } from "react-router-dom";
 
