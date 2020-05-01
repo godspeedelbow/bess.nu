@@ -1,25 +1,10 @@
 import React, { Fragment } from "react";
-import { compose, withProps, withStateHandlers } from "recompose";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 
-import styled from "styled-components";
 import { Authenticate } from "./index";
-import {
-  Button,
-  Input,
-  Panel,
-  Paragraph,
-  SubTitle,
-  Title,
-} from "../shared/index";
+import { Button, Panel, Paragraph, SubTitle, Title } from "../shared/index";
 import { getPreview } from "../lib";
-
-const UnsubscribeButton = styled.button`
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-`;
 
 const NOTIFY_SUBSCRIBERS = gql`
   mutation(
@@ -69,10 +54,10 @@ const Newsletter = ({ latestArticle }) => {
           const variables = {
             url,
             title,
-            teaser,
+            teaser
           };
           console.log(`*** variables`, variables);
-          const onSubmit = (event) => {
+          const onSubmit = event => {
             console.log(`*** event`, event);
             event.preventDefault();
             // notifySubscribers({ variables });

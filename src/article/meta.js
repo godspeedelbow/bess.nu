@@ -30,7 +30,11 @@ const MetaContainer = props => {
       {" / "}
       <strong>locatie</strong>{" "}
       {geolocation ? (
-        <a href={getGoogleMapsLink(lat, lng)} target="_blank">
+        <a
+          href={getGoogleMapsLink(lat, lng)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {location}
         </a>
       ) : (

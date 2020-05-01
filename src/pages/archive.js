@@ -20,7 +20,7 @@ const Archive = ({ articles }) => {
   return (
     <Fragment>
       <Title>Archief</Title>
-      {articles.map((article) => {
+      {articles.map(article => {
         const { id, title, created, location } = article;
         const preview = getPreview(article);
 

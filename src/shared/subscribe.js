@@ -1,5 +1,5 @@
 import React from "react";
-import { compose, withState, withHandlers, withProps } from "recompose";
+import { compose, withState, withHandlers } from "recompose";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import isEmail from "is-email";
@@ -78,7 +78,7 @@ const Subscribe = ({
   localError,
   data,
   loading,
-  error,
+  error
 }) => {
   const disabled = !!loading;
 
@@ -104,7 +104,7 @@ const Subscribe = ({
         />
         <StyledToggle
           checked={toggle}
-          onChange={(event) => {
+          onChange={event => {
             const value = event.target.checked;
             setToggle(value);
           }}
@@ -125,7 +125,7 @@ const SubscribeContainer = compose(
   withState("localError", "setLocalError", null),
   withHandlers({
     onClick: ({ expand }) => () => expand(true),
-    onSubmit: ({ history, subscribe, setLocalError, toggle }) => (event) => {
+    onSubmit: ({ history, subscribe, setLocalError, toggle }) => event => {
       event.preventDefault();
 
       const formData = new FormData(event.target);
@@ -147,7 +147,7 @@ const SubscribeContainer = compose(
         subscribe({ variables: { email } });
       }
     },
-    onChange: ({ setLocalError }) => () => setLocalError(null),
+    onChange: ({ setLocalError }) => () => setLocalError(null)
   })
 )(Subscribe);
 

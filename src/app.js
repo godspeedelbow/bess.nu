@@ -65,7 +65,7 @@ const App = () => {
                   <Route
                     exact
                     path="/archief/:id"
-                    render={(props) => {
+                    render={props => {
                       const articleId = props.match.params.id;
                       const article = articles.find(
                         ({ id }) => id === articleId
