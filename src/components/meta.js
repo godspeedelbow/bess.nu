@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Paragraph from "../components/paragraph";
+import Paragraph from "./paragraph";
 
 import getGoogleMapsLink from "../lib/get-google-maps-link";
 

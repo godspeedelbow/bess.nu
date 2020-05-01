@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./app";
+import { App } from "./pages";
 // import registerServiceWorker from "./registerServiceWorker";
 import { unregister as unregisterServiceWorker } from "./registerServiceWorker";
 

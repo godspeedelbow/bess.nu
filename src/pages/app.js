@@ -1,17 +1,23 @@
 import React from "react";
-
-import Header from "./header";
-import Article from "./article";
-import { Crew, Bess, Newsletter, RoutePage, Archive } from "./pages";
-import Unsubscribe from "./pages/unsubscribe";
-import ScrollToTop from "./components/scroll-to-top";
-
 import { HashRouter as Router, Route } from "react-router-dom";
-
 import styled from "styled-components";
 
-import { AuthenticationProvider, ApolloProvider } from "./components";
-import { GetArticles } from "./components";
+import {
+  AuthenticationProvider,
+  ApolloProvider,
+  GetArticles,
+  Header,
+  ScrollToTop,
+} from "../components";
+import {
+  Archive,
+  Article,
+  Bess,
+  Crew,
+  Newsletter,
+  RoutePage,
+  Unsubscribe,
+} from "./";
 
 const Content = styled.div`
   max-width: 800px;

@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
-import Paragraph from "../components/paragraph";
-import Photo from "../components/photo";
+import { Paragraph, Photo } from "./";
 
 const Title = styled(Paragraph)`
   font-size: 1em;

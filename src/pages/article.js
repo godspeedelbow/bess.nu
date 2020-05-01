@@ -2,19 +2,17 @@ import React, { Fragment } from "react";
 
 import ReactMarkdown from "react-markdown";
 
-import Subscribe from "../components/subscribe";
+import {
+  Meta,
+  Photos,
+  Title,
+  Paragraph,
+  Subscribe,
+  TransparentLink,
+  NeighborArticles,
+} from "../components";
 
-import Meta from "./meta";
-import Photos from "./photos";
-
-import Title from "../components/title";
-import Paragraph from "../components/paragraph";
-import TransparentLink from "../components/transparent-link";
-import NeighborArticles from "../components/neighbor-articles";
-
-export default Article;
-
-function Article({ articles, article }) {
+export default function Article({ articles, article }) {
   const {
     id,
     title = "Geen titel",

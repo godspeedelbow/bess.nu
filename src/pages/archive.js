@@ -2,14 +2,18 @@ import React, { Fragment } from "react";
 
 import styled from "styled-components";
 
-import Title from "../components/title";
-import SubTitle from "../components/sub-title";
-import Meta from "../article/meta";
-import Paragraph from "../components/paragraph";
-import TransparentLink from "../components/transparent-link";
+import {
+  Meta,
+  Paragraph,
+  SubTitle,
+  Title,
+  TransparentLink,
+} from "../components";
 
 import { getPreview } from "../lib";
 
+console.log(`*** TransparentLink`, TransparentLink);
+console.log(`*** SubTitle`, SubTitle);
 const PreviewTitle = styled(SubTitle)`
   margin-top: 0;
 `;

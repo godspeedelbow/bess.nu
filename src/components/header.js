@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { useAuthentication } from "./hooks";
+import { useAuthentication } from "../hooks";
 
 const NavBar = styled.div`
   margin: 0;
