@@ -36,82 +36,65 @@ const NOTIFY_SUBSCRIBERS = gql`
   }
 `;
 
-const Newsletter = ({ latestArticle, authenticated, onAuthenticated }) => {
-  console.log(`*** latestArticle`, latestArticle);
-  console.log(`*** authenticated`, authenticated);
-  if (!authenticated) {
-    return <Authenticate onAuthenticated={onAuthenticated} />;
-  }
-
+const Newsletter = ({ latestArticle }) => {
   return (
-    <Mutation mutation={NOTIFY_SUBSCRIBERS}>
-      {(notifySubscribers, { loading, error, data }) => {
-        console.log(`*** data`, data);
-        console.log(`*** loading`, loading);
-        if (error) {
-          console.log(`*** error`, error);
-          console.log(`*** error.extensions`, error.extensions);
+    <Authenticate>
+      <Mutation mutation={NOTIFY_SUBSCRIBERS}>
+        {(notifySubscribers, { loading, error, data }) => {
+          console.log(`*** data`, data);
+          console.log(`*** loading`, loading);
+          if (error) {
+            console.log(`*** error`, error);
+            console.log(`*** error.extensions`, error.extensions);
+            return (
+              <Fragment>
+                <Title>Oeps</Title>
+                <p>Er ging iets fout: {error.message}</p>
+              </Fragment>
+            );
+          }
+          if (data) {
+            return (
+              <Fragment>
+                <Title>Verstuurd</Title>
+                <p>Verstuurd naar {[].length} mensen!</p>
+              </Fragment>
+            );
+          }
+
+          const url = `https://bess.nu/#/archief/${latestArticle.id}`;
+          const title = latestArticle.title;
+          const teaser = `${getPreview(latestArticle)}…`;
+
+          const variables = {
+            url,
+            title,
+            teaser,
+          };
+          console.log(`*** variables`, variables);
+          const onSubmit = (event) => {
+            console.log(`*** event`, event);
+            event.preventDefault();
+            // notifySubscribers({ variables });
+            notifySubscribers();
+          };
+
           return (
             <Fragment>
-              <Title>Oeps</Title>
-              <p>Er ging iets fout: {error.message}</p>
+              <Title>Nieuwsbrief versturen</Title>
+              <Panel>
+                <SubTitle>{title}</SubTitle>
+                <Paragraph>{teaser}</Paragraph>
+              </Panel>
+              <Button type="submit" disabled={!!loading} onClick={onSubmit}>
+                Verstuur de nieuwsbrief
+              </Button>
             </Fragment>
           );
-        }
-        if (data) {
-          return (
-            <Fragment>
-              <Title>Verstuurd</Title>
-              <p>Verstuurd naar {[].length} mensen!</p>
-            </Fragment>
-          );
-        }
-
-        const url = `https://bess.nu/#/archief/${latestArticle.id}`;
-        const title = latestArticle.title;
-        const teaser = `${getPreview(latestArticle)}…`;
-
-        const variables = {
-          url,
-          title,
-          teaser,
-        };
-        console.log(`*** variables`, variables);
-        const onSubmit = (event) => {
-          console.log(`*** event`, event);
-          event.preventDefault();
-          // notifySubscribers({ variables });
-          notifySubscribers();
-        };
-
-        return (
-          <Fragment>
-            <Title>Nieuwsbrief versturen</Title>
-            <Panel>
-              <SubTitle>{title}</SubTitle>
-              <Paragraph>{teaser}</Paragraph>
-            </Panel>
-            <Button type="submit" disabled={!!loading} onClick={onSubmit}>
-              Verstuur de nieuwsbrief
-            </Button>
-          </Fragment>
-        );
-      }}
-    </Mutation>
+        }}
+      </Mutation>
+    </Authenticate>
   );
 };
 
-const NewsletterContainer = compose(
-  withStateHandlers(
-    {
-      authenticated: true,
-    },
-    {
-      onAuthenticated: () => () => ({
-        authenticated: true,
-      }),
-    }
-  )
-)(Newsletter);
-
-export default NewsletterContainer;
+export default Newsletter;

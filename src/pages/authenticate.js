@@ -9,6 +9,10 @@ import styled from "styled-components";
 
 import { Button, Input, Panel, SubTitle, Title } from "../shared/index";
 
+function isAuthenticatedSession() {
+  return !!sessionStorage.getItem("token");
+}
+
 const AUTHENTICATE = gql`
   mutation($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -17,7 +21,18 @@ const AUTHENTICATE = gql`
   }
 `;
 
-const Authenticate = ({ error, localError, onChange, onSubmit }) => {
+const Authenticate = ({
+  isAuthenticated,
+  children,
+  error,
+  localError,
+  onChange,
+  onSubmit,
+}) => {
+  if (isAuthenticated) {
+    return React.Children.only(children);
+  }
+
   return (
     <Fragment>
       <SubTitle>Inloggen</SubTitle>
@@ -42,11 +57,11 @@ const Authenticate = ({ error, localError, onChange, onSubmit }) => {
 };
 
 const AuthenticateContainer = compose(
-  withState("apiKey", "setApiKey"),
   withState("localError", "setLocalError", null),
+  withState("isAuthenticated", "setAuthenticated", isAuthenticatedSession()),
   withHandlers({
     onClick: ({ expand }) => () => expand(true),
-    onSubmit: ({ authenticate, setLocalError, onAuthenticated }) => async (
+    onSubmit: ({ authenticate, setLocalError, setAuthenticated }) => async (
       event
     ) => {
       event.preventDefault();
@@ -76,9 +91,9 @@ const AuthenticateContainer = compose(
         .then((response) => {
           const token = get(response, "data.login.token");
 
-          localStorage.setItem("token", token);
+          sessionStorage.setItem("token", token);
 
-          onAuthenticated && onAuthenticated();
+          setAuthenticated(true);
         })
         .catch(console.error);
     },
@@ -86,17 +101,18 @@ const AuthenticateContainer = compose(
   })
 )(Authenticate);
 
-export default ({ onAuthenticated }) => {
+export default ({ children }) => {
   return (
     <Mutation mutation={AUTHENTICATE}>
       {(authenticate, { loading, error, data }) => (
         <AuthenticateContainer
           authenticate={authenticate}
-          onAuthenticated={onAuthenticated}
           loading={loading}
           error={error && error.message}
           data={data}
-        />
+        >
+          {children}
+        </AuthenticateContainer>
       )}
     </Mutation>
   );
