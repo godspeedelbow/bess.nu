@@ -21,7 +21,7 @@ export default function Newsletter({ latestArticle }) {
       const variables = {
         url,
         title,
-        // teaser, // TODO: enable to send newsletter
+        teaser,
       };
 
       console.log(`*** variables`, variables);
