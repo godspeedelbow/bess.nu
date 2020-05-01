@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 
 import styled from "styled-components";
 
-import Title from "../shared/title";
+import Title from "../components/title";
 
 const UnsubscribeButton = styled.button`
   padding: 10px;
@@ -72,12 +72,12 @@ const Unsubscribe = ({ email }) => {
   );
 };
 
-const UnsubscribeContainer = withProps(props => {
+const UnsubscribeContainer = withProps((props) => {
   const params = new URLSearchParams(props.location.search);
   const email = params.get("email");
 
   return {
-    email
+    email,
   };
 })(Unsubscribe);
 

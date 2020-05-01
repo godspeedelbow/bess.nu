@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import Panel from "./panel";
-import { previousArticle, nextArticle } from "../data";
+import { previousArticle, nextArticle } from "../lib/legacy-data";
 
 const Title = styled.h3`
   --x-height-multiplier: 0.342;

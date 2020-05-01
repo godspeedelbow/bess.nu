@@ -1,5 +1,5 @@
 import React from "react";
-import { compose, withState, withHandlers, withProps } from "recompose";
+import { compose, withState, withHandlers } from "recompose";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import isEmail from "is-email";
@@ -7,7 +7,7 @@ import Toggle from "react-toggle";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 
-import Panel from "./panel";
+import { Button, Input, Panel } from "./index";
 
 import "formdata-polyfill";
 import "react-toggle/style.css"; // for ES6 modules
@@ -33,32 +33,6 @@ const SubTitle = styled.h3`
   }
   @media (min-width: 800px) {
     font-size: 22px;
-  }
-`;
-
-const Email = styled.input`
-  border: 1px solid #bbb;
-  padding: 10px;
-  border-radius: 5px;
-  margin-right: 10px;
-  margin-top: 10px;
-  font-size: 15px;
-  @media (min-width: 800px) {
-    width: 35%;
-  }
-`;
-
-const SubscribeButton = styled.button`
-  margin-top: 10px;
-  border: 1px solid #bbb;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 15px;
-  background-color: #e9e9e9;
-
-  &:hover {
-    background-color: #f0f0f0;
   }
 `;
 
@@ -121,7 +95,7 @@ const Subscribe = ({
     <Panel>
       <SubTitle>Wil je een seintje als we een nieuw bericht plaatsen?</SubTitle>
       <form onSubmit={onSubmit}>
-        <Email
+        <Input
           disabled={disabled}
           type="email"
           name="email"
@@ -136,9 +110,9 @@ const Subscribe = ({
           }}
         />
 
-        <SubscribeButton disabled={disabled} type="submit">
+        <Button disabled={disabled} type="submit">
           {toggle ? "Hou me op de hoogte" : "Laat me met rust"}
-        </SubscribeButton>
+        </Button>
       </form>
       <Error>{error || localError}</Error>
     </Panel>

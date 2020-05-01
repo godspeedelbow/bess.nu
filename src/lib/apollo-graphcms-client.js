@@ -6,9 +6,9 @@ const httpLink = createHttpLink({
   uri: "https://api-euwest.graphcms.com/v1/cjwiutz3s028s01dpvq7v6nd9/master"
 });
 
-const prismaClient = new ApolloClient({
+const apolloGraphCmsClient = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache()
 });
 
-export default prismaClient;
+export default apolloGraphCmsClient;

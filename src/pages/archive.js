@@ -2,12 +2,18 @@ import React, { Fragment } from "react";
 
 import styled from "styled-components";
 
-import Title from "../shared/title";
-import SubTitle from "../shared/sub-title";
-import Meta from "../article/meta";
-import Paragraph from "../shared/paragraph";
-import TransparentLink from "../shared/transparent-link";
+import {
+  Meta,
+  Paragraph,
+  SubTitle,
+  Title,
+  TransparentLink,
+} from "../components";
 
+import { getPreview } from "../lib";
+
+console.log(`*** TransparentLink`, TransparentLink);
+console.log(`*** SubTitle`, SubTitle);
 const PreviewTitle = styled(SubTitle)`
   margin-top: 0;
 `;
@@ -18,10 +24,9 @@ const Archive = ({ articles }) => {
   return (
     <Fragment>
       <Title>Archief</Title>
-      {articles.map(article => {
-        const { id, title, created, location, paragraphs } = article;
-        const [paragraph] = paragraphs;
-        const preview = paragraph.substring(0, 200);
+      {articles.map((article) => {
+        const { id, title, created, location } = article;
+        const preview = getPreview(article);
 
         return (
           <Fragment>

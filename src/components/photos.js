@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
-import Paragraph from "../shared/paragraph";
-import Photo from "../shared/photo";
+import { Paragraph, Photo } from "./";
 
 const Title = styled(Paragraph)`
   font-size: 1em;
@@ -12,7 +11,7 @@ const Title = styled(Paragraph)`
 
 const Photos = ({ photos }) => (
   <Fragment>
-    {photos.map(photo => {
+    {photos.map((photo) => {
       const { title, src, srcOriginal, mimeType = "" } = photo;
       return (
         <Fragment>
