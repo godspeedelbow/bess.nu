@@ -1,6 +1,6 @@
 import React from "react";
 
-import { articles } from "../data";
+import { articles } from "../lib/legacy-data";
 import { GraphCMSQuery, Loading } from "./";
 import gql from "graphql-tag";
 
@@ -51,7 +51,7 @@ function GetArticles(props) {
         const [latestArticle] = merged;
         return children({
           articles: merged,
-          latestArticle
+          latestArticle,
         });
       }}
     </GraphCMSQuery>
@@ -65,21 +65,21 @@ function asStaticArticle(graphCMSArticle) {
     {
       day: "numeric",
       month: "long",
-      year: "numeric"
+      year: "numeric",
     }
   );
 
-  const photos = (graphCMSArticle.photos || []).map(photo => {
+  const photos = (graphCMSArticle.photos || []).map((photo) => {
     return {
       ...photo,
-      src: removeExifData(photo.src)
+      src: removeExifData(photo.src),
     };
   });
   return {
     ...graphCMSArticle,
     created,
     paragraphs,
-    photos
+    photos,
   };
 }
 
