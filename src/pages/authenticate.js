@@ -1,15 +1,13 @@
-import React, { Fragment } from "react";
-import { compose, withHandlers, withState } from "recompose";
-import { Mutation } from "react-apollo";
+import React, { Fragment, useCallback, useState } from "react";
 import gql from "graphql-tag";
 import isEmail from "is-email";
 import { get } from "lodash-es";
-
 import styled from "styled-components";
+import { useMutation } from "@apollo/react-hooks";
 
-import { Button, Input, Panel, SubTitle, Title } from "../shared/index";
+import { Button, Input, SubTitle } from "../shared/index";
 
-function isAuthenticatedSession() {
+function hasAuthenticatedSession() {
   return !!sessionStorage.getItem("token");
 }
 
@@ -21,14 +19,55 @@ const AUTHENTICATE = gql`
   }
 `;
 
-const Authenticate = ({
-  isAuthenticated,
-  children,
-  error,
-  localError,
-  onChange,
-  onSubmit,
-}) => {
+export default function Authenticate({ children }) {
+  const [localError, setLocalError] = useState(null);
+  const [isAuthenticated, setAuthenticated] = useState(
+    hasAuthenticatedSession()
+  );
+
+  const [authenticate, { error }] = useMutation(AUTHENTICATE);
+
+  const onSubmit = useCallback(
+    event => {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+
+      const email = formData.get("email");
+      const password = formData.get("password");
+
+      if (!email) {
+        setLocalError("Vul je emailadres in.");
+        return;
+      }
+
+      if (!password) {
+        setLocalError("Vul je wachtwoord in.");
+        return;
+      }
+
+      if (!isEmail(email)) {
+        setLocalError("Vul een geldig emailadres in.");
+        return;
+      }
+
+      authenticate({
+        variables: { email, password }
+      })
+        .then(response => {
+          const token = get(response, "data.login.token");
+
+          sessionStorage.setItem("token", token);
+
+          setAuthenticated(true);
+        })
+        .catch(console.error);
+    },
+    [authenticate, setAuthenticated, setLocalError]
+  );
+
+  const onChange = useCallback(() => setLocalError(null), [setLocalError]);
+
   if (isAuthenticated) {
     return React.Children.only(children);
   }
@@ -51,72 +90,10 @@ const Authenticate = ({
         />
         <Button type="submit">Gaan met die banaan</Button>
       </form>
-      <Error>{error || localError}</Error>
+      <Error>{error?.message || localError}</Error>
     </Fragment>
   );
-};
-
-const AuthenticateContainer = compose(
-  withState("localError", "setLocalError", null),
-  withState("isAuthenticated", "setAuthenticated", isAuthenticatedSession()),
-  withHandlers({
-    onClick: ({ expand }) => () => expand(true),
-    onSubmit: ({ authenticate, setLocalError, setAuthenticated }) => async (
-      event
-    ) => {
-      event.preventDefault();
-
-      const formData = new FormData(event.target);
-      const email = formData.get("email");
-      const password = formData.get("password");
-
-      if (!email) {
-        setLocalError("Vul je emailadres in.");
-        return;
-      }
-
-      if (!password) {
-        setLocalError("Vul je wachtwoord in.");
-        return;
-      }
-
-      if (!isEmail(email)) {
-        setLocalError("Vul een geldig emailadres in.");
-        return;
-      }
-
-      authenticate({
-        variables: { email, password },
-      })
-        .then((response) => {
-          const token = get(response, "data.login.token");
-
-          sessionStorage.setItem("token", token);
-
-          setAuthenticated(true);
-        })
-        .catch(console.error);
-    },
-    onChange: ({ setLocalError }) => () => setLocalError(null),
-  })
-)(Authenticate);
-
-export default ({ children }) => {
-  return (
-    <Mutation mutation={AUTHENTICATE}>
-      {(authenticate, { loading, error, data }) => (
-        <AuthenticateContainer
-          authenticate={authenticate}
-          loading={loading}
-          error={error && error.message}
-          data={data}
-        >
-          {children}
-        </AuthenticateContainer>
-      )}
-    </Mutation>
-  );
-};
+}
 
 const Error = styled.div`
   margin-top: 10px;
