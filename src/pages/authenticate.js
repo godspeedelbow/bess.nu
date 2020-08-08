@@ -52,9 +52,7 @@ export default function Authenticate({ children }) {
         .then((response) => {
           const token = get(response, "data.login.token");
 
-          sessionStorage.setItem("token", token);
-
-          logIn();
+          logIn(token);
         })
         .catch(console.error);
     },
